@@ -1,0 +1,4 @@
+const SLIDE_WIDTH = 1920
+const SLIDE_HEIGHT = 1080
+
+export { SLIDE_WIDTH, SLIDE_HEIGHT }

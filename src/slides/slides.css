@@ -1,0 +1,774 @@
+.slide.intro {
+}
+.slide.intro h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 3.5em;
+}
+.slide.intro .js-box {
+	background: #efdb5a;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	position: relative;
+}
+.slide.intro .js-box span {
+	font-size: 0.5em;
+	color: #323330;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	line-height: 0.7em;
+}
+.slide.intro h2 {
+	font-size: 0.5em;
+	transform: translate(0, 50vw);
+	transition: transform 0.4s ease-in-out;
+}
+.slide.intro.step-then h2 {
+	transform: translate(0, 0);
+}
+
+.slide.me li:nth-child(2),
+.slide.me li:nth-child(3),
+.slide.me li:nth-child(4),
+.slide.me li:nth-child(5),
+.slide.me li:nth-child(6) {
+	visibility: hidden;
+}
+.slide.me.did-step-2 li:nth-child(2) {
+	visibility: visible;
+}
+.slide.me.did-step-3 li:nth-child(3) {
+	visibility: visible;
+}
+.slide.me.did-step-4 li:nth-child(4) {
+	visibility: visible;
+}
+.slide.me.did-step-5 li:nth-child(5) {
+	visibility: visible;
+}
+.slide.me.did-step-6 li:nth-child(6) {
+	visibility: visible;
+}
+.slide.me .highlight {
+	background: #efdb5a;
+	color: #323330;
+}
+
+.slide.me-pic .content {
+	padding: 0;
+	text-align: center;
+}
+.slide.me-pic .logo {
+	transform: translate(0, 100vw);
+	position: absolute;
+	left: 8%;
+	top: 50%;
+	background: #2f3c5f;
+	transition: transform 0.5s ease-in;
+}
+.slide.me-pic .me {
+	display: inline-block;
+	height: 100%;
+	transition: transform 1s ease-in-out;
+}
+.slide.me-pic.did-step-zoom-1 .me {
+	transform: scale(7) translate(24%, 2%) rotate(-10deg);
+}
+.slide.me-pic.did-step-zoom-2 .me {
+	transform: scale(12) translate(-6%, 18%) rotate(-10deg);
+}
+.slide.me-pic.did-step-logo .logo {
+	transform: scale(1.5);
+}
+
+.slide.inspiration {
+	background: url('./sourcream.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.slide.inspiration h1 {
+	font-size: 3.5em;
+	text-transform: uppercase;
+	text-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.slide.break-stuff textarea {
+	border-radius: 0.25em;
+	font-family: 'Source Code Pro';
+	font-size: 0.7em;
+	border: none;
+	background: black;
+	color: white;
+	width: 20em;
+	height: 10em;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+/* @keyframes atari {
+	0% {
+		background-position-x: 0%;
+		background-position-y: 0%;
+	}
+
+	100% {
+		background-position-x: 100%;
+		background-position-y: 100%;
+	}
+} */
+.slide.atari {
+	background: black url('./atari.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+
+	/* animation: atari 30s infinite; */
+}
+.slide.atari .wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.slide.atari h1 {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #efdb5a;
+	color: #323330;
+	display: inline-block;
+	padding: 0 0.2em;
+	padding-top: 0.2em;
+	box-sizing: border-box;
+	margin: 0;
+	transform: translate(0, -27vw);
+	transition: transform 0.4s ease-out;
+	z-index: 2;
+}
+.slide.atari h2 {
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #efdb5a;
+	background: #323330;
+	display: inline-block;
+	padding: 0 0.2em;
+	padding-top: 0.2em;
+	box-sizing: border-box;
+	margin: 0;
+	font-size: 1em;
+	z-index: 1;
+	opacity: 0;
+}
+.slide.atari.did-step-h1 h1 {
+	transform: translate(0, 0);
+}
+.slide.atari.did-step-h1 h2 {
+	transition: transform 0.4s ease-out;
+	transform: translate(0, 0);
+}
+.slide.atari.did-step-h2 h2 {
+	transform: translate(0, 200%);
+	opacity: 1;
+}
+
+.slide.devo {
+	background: black;
+}
+.slide.devo .content {
+	padding: 0;
+}
+.slide.devo iframe {
+	width: 100%;
+	height: 100%;
+}
+.slide.devo .mtv {
+	position: absolute;
+	left: 6.5em;
+	bottom: 2em;
+	font-size: 0.8em;
+	pointer-events: none;
+	text-shadow: 4px 4px black;
+}
+
+.slide.modal .content {
+	padding: 0;
+}
+
+.slide.modal {
+	background: black;
+}
+
+.slide.modal iframe {
+	width: 44%;
+	height: 97.5%;
+	/* font-size: 16pt; */
+	/* border-radius: 14em; */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slide.modular {
+	background: black url('./modular.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	/* animation: atari 30s infinite; */
+}
+
+.slide.digital-vis-white {
+	background: black;
+}
+.slide.digital-vis-white .content {
+	padding: 0;
+}
+.slide.digital-vis-white iframe {
+	width: 100%;
+	height: 100%;
+}
+.slide.digital-vis-white .mtv {
+	position: absolute;
+	left: 1em;
+	bottom: 1em;
+	font-size: 0.8em;
+	pointer-events: none;
+	text-shadow: 4px 4px black;
+}
+
+.slide.digital-vis-black {
+	background: black;
+}
+.slide.digital-vis-black .content {
+	padding: 0;
+}
+.slide.digital-vis-black iframe {
+	width: 100%;
+	height: 100%;
+}
+.slide.digital-vis-black .mtv {
+	position: absolute;
+	left: 1em;
+	bottom: 1em;
+	font-size: 0.8em;
+	pointer-events: none;
+	text-shadow: 4px 4px black;
+}
+
+.slide.web-apis .api {
+	visibility: hidden;
+}
+.slide.web-apis .library {
+	visibility: hidden;
+}
+.slide.web-apis.did-step-show-libraries .library {
+	visibility: visible;
+}
+.slide.web-apis.did-step-show-apis .api {
+	visibility: visible;
+}
+.slide.web-apis li:nth-child(5) {
+	font-size: 0.95em;
+}
+.slide.web-apis li:nth-child(6) {
+	font-size: 0.9em;
+}
+.slide.web-apis li:nth-child(7) {
+	font-size: 0.85em;
+}
+.slide.web-apis li:nth-child(8) {
+	font-size: 0.8em;
+}
+.slide.web-apis li:nth-child(9) {
+	font-size: 0.75em;
+}
+.slide.web-apis li:nth-child(10) {
+	font-size: 0.7em;
+}
+.slide.web-apis li:nth-child(11) {
+	font-size: 0.65em;
+}
+.slide.web-apis li:nth-child(12) {
+	font-size: 0.6em;
+}
+.slide.web-apis li:nth-child(13) {
+	font-size: 0.55em;
+}
+.slide.web-apis li:nth-child(14) {
+	font-size: 0.5em;
+}
+.slide.web-apis li:nth-child(15) {
+	font-size: 0.45em;
+}
+.slide.web-apis li:nth-child(16) {
+	font-size: 0.4em;
+}
+.slide.web-apis li:nth-child(17) {
+	font-size: 0.35em;
+}
+.slide.web-apis li:nth-child(18) {
+	font-size: 0.3em;
+}
+
+.slide.album-art-generator .content {
+	transform: scale(1) !important;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background: black;
+}
+.slide.album-art-generator iframe {
+	width: 100vw;
+	height: 100vh;
+}
+.slide.album-art-generator button {
+	position: absolute;
+	left: 50%;
+	bottom: 1em;
+	transform: translate(-50%, 0);
+	font-size: 0.5em;
+	font-family: 'League Spartan';
+	border: none;
+	border-radius: 1em;
+	padding: 0 1em;
+	padding-top: 0.25em;
+	cursor: pointer;
+	background: #ea4600;
+	color: white;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease-in-out;
+}
+.slide.album-art-generator button:hover {
+	color: #ea4600;
+	background: white;
+	transform: translate(-50%, 0) scale(1.1);
+}
+
+.slide.midi-1 .content {
+	transition: filter 1s;
+}
+.slide.midi-1 img {
+	width: 5em;
+	position: absolute;
+	transition: width 1s, left 1s, top 1s, right 1s, bottom 1s, transform 1s, filter 1s;
+}
+
+.slide.midi-1 .drums-speak {
+	left: 9.75em;
+	bottom: 9em;
+	width: 4em;
+}
+.slide.midi-1 .synth {
+	width: 14em;
+	left: 10em;
+	top: 1em;
+}
+.slide.midi-1 .synth-speak,
+.slide.midi-1 .boss-speak,
+.slide.midi-1 .akai-speak {
+	opacity: 0;
+}
+.slide.midi-1 .synth {
+	width: 20em;
+	left: 8em;
+	top: 8em;
+}
+.slide.midi-1 .osc {
+	position: absolute;
+	transition: width 1s, left 1s, top 1s, right 1s, bottom 1s, transform 1s;
+	width: 18em;
+	height: 11em;
+}
+.slide.midi-1 .osc .bg {
+	background: white;
+	position: absolute;
+	left: 6em;
+	top: 2em;
+	width: 6em;
+	height: 7em;
+}
+@keyframes midi-1-osc-sine {
+	from {
+		left: 342px;
+	}
+	to {
+		left: 125px;
+	}
+}
+.slide.midi-1 .osc .sine {
+	width: 10em;
+	top: 4.4em;
+	left: 342px;
+	animation: 1s midi-1-osc-sine infinite linear;
+}
+.slide.midi-1 .osc .bubble-cutout {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+.slide.midi-1 .osc {
+	left: 16em;
+	top: 6em;
+}
+@keyframes drum-dance {
+	0% {
+		transform: translate(0, 0);
+	}
+	20% {
+		transform: translate(2%, -3%) rotate(2deg);
+	}
+	40% {
+		transform: translate(0, 0);
+	}
+	60% {
+		transform: translate(-2%, -3%) rotate(-2deg);
+	}
+	80% {
+		transform: translate(0, 0%);
+	}
+	/* 70% {
+		transform: translate(0, -5%);
+	}
+	80% {
+		transform: translate(0, 0%);
+	} */
+}
+/* @keyframes synth-bump {
+	0% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.05);
+	}
+	66% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+} */
+@keyframes synth-bump {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(180deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+.slide.midi-1.step-synth-speak .synth {
+	animation: 1s synth-bump infinite linear;
+}
+.slide.midi-1.did-step-synth-speak .osc {
+	position: absolute;
+	left: 21.5em;
+	top: 0em;
+}
+.slide.midi-1.did-step-synth-and-boss .synth {
+	transform: scale(0.5) translate(0, -200%);
+}
+.slide.midi-1.did-step-synth-and-boss .osc {
+	transform: translate(0, -110%);
+}
+.slide.midi-1 .boss {
+	width: 9em;
+	left: -14em;
+	bottom: 3em;
+}
+.slide.midi-1.did-step-synth-and-boss .boss {
+	width: 12em;
+	left: 12em;
+	bottom: 1em;
+}
+.slide.midi-1 .drums-speak {
+	opacity: 0;
+}
+.slide.midi-1.did-step-synth-and-boss .drums-speak {
+	left: 19.75em;
+	bottom: 5em;
+	width: 4em;
+}
+.slide.midi-1.step-boss-speak .boss {
+	animation: 1s drum-dance infinite;
+}
+.slide.midi-1.did-step-boss-speak .drums-speak {
+	left: 24em;
+	bottom: 9em;
+	width: 4em;
+	opacity: 1;
+}
+.slide.midi-1.did-step-all-three .drums-speak {
+	bottom: 25em;
+}
+.slide.midi-1.did-step-all-three .boss {
+	width: 9em;
+	left: 1em;
+	bottom: 2em;
+}
+.slide.midi-1 .akai {
+	width: 9em;
+	bottom: 1em;
+	right: -12em;
+}
+.slide.midi-1.did-step-all-three .akai {
+	width: 9em;
+	bottom: 1em;
+	right: 1em;
+}
+.slide.midi-1.did-step-all-three .synth {
+	transform: scale(0.7) translate(0, -120%);
+}
+.slide.midi-1.did-step-all-three .boss-speak {
+	left: 4.75em;
+	bottom: 3em;
+}
+.slide.midi-1.did-step-language-boss .boss-speak {
+	left: 10.5em;
+	bottom: 6em;
+	opacity: 1;
+}
+.slide.midi-1.did-step-all-three .synth-speak {
+	left: 19.5em;
+	top: 3em;
+}
+.slide.midi-1.did-step-language-synth .synth-speak {
+	left: 25.5em;
+	top: 1em;
+	opacity: 1;
+}
+.slide.midi-1.did-step-all-three .akai-speak {
+	right: 4.5em;
+	bottom: 4.5em;
+}
+.slide.midi-1.did-step-language-akai .akai-speak {
+	right: 10.5em;
+	opacity: 1;
+}
+.slide.midi-1.did-step-sad .synth,
+.slide.midi-1.did-step-sad .boss,
+.slide.midi-1.did-step-sad .akai {
+	filter: grayscale(100%);
+}
+.slide.midi-1.did-step-sad .synth-speak,
+.slide.midi-1.did-step-sad .boss-speak,
+.slide.midi-1.did-step-sad .akai-speak {
+	filter: opacity(0);
+}
+.slide.midi-1 .midi-logo {
+	left: 15.5em;
+	bottom: -5em;
+}
+.slide.midi-1.did-step-midi .midi-logo {
+	left: 15.5em;
+	bottom: 5em;
+	transform: scale(2);
+}
+.slide.midi-1.did-step-midi-boss .midi-logo {
+	left: 3em;
+	bottom: 3.5em;
+}
+.slide.midi-1.did-step-midi-synth .boss {
+	filter: grayscale(0%);
+}
+.slide.midi-1.did-step-midi-synth .midi-logo {
+	left: 15.5em;
+	bottom: 13.25em;
+}
+.slide.midi-1.did-step-midi-akai .synth {
+	filter: grayscale(0%);
+}
+.slide.midi-1.did-step-midi-akai .midi-logo {
+	left: 28em;
+	bottom: 3.75em;
+}
+.slide.slide.midi-1.did-step-connected .akai {
+	filter: grayscale(0);
+}
+.slide.midi-1.did-step-connected .midi-logo {
+	transform: scale(1);
+	left: 15.5em;
+	bottom: 5em;
+}
+.slide.midi-1.did-step-dance .synth {
+	animation: 1s synth-bump infinite linear;
+}
+.slide.midi-1.did-step-dance .akai,
+.slide.midi-1.did-step-dance .boss {
+	animation: 1s drum-dance infinite;
+}
+
+.slide.midi-2 img {
+	position: absolute;
+	transition: width 1s, left 1s, top 1s, right 1s, bottom 1s, transform 1s, filter 1s;
+}
+.slide.midi-2 .synth,
+.slide.midi-2 .key-down,
+.slide.midi-2 .key-down-2 {
+	width: 20em;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+}
+.slide.midi-2 .key-down,
+.slide.midi-2 .key-down-2 {
+	visibility: hidden;
+}
+.slide.midi-2 .finger {
+	width: 5em;
+	left: 16.1em;
+	bottom: -10em;
+}
+.slide.midi-2 .bubble {
+	background-image: url('../slides/bubble.svg');
+	width: 6em;
+	height: 6em;
+	background-repeat: no-repeat;
+	color: #ea4600;
+	/* font-family: 'Source Code Pro'; */
+	font-weight: bold;
+	position: absolute;
+	left: 27.5em;
+	top: 1em;
+	visibility: hidden;
+}
+.slide.midi-2 .bubble .text {
+	font-size: 0.7em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+.slide.midi-2 .bubble .text > span {
+	display: block;
+	text-align: center;
+	margin-bottom: 0.2em;
+}
+.slide.midi-2 .bubble .note {
+	font-size: 2em;
+}
+.slide.midi-2.did-step-finger .finger {
+	bottom: -0.5em;
+}
+.slide.midi-2.did-step-hit-key .finger {
+	transition: none;
+	transform: scale(0.9) translate(0.1em, 0);
+}
+.slide.midi-2.did-step-hit-key .key-down {
+	visibility: visible;
+}
+.slide.midi-2.did-step-hit-key .bubble-1 {
+	visibility: visible;
+}
+.slide.midi-2.did-step-remove-key .finger {
+	transform: none;
+}
+.slide.midi-2.did-step-remove-key .key-down {
+	visibility: hidden;
+}
+.slide.midi-2.did-step-remove-key .bubble-1 {
+	visibility: hidden;
+}
+.slide.midi-2.did-step-move-finger .finger {
+	left: 11.8em;
+}
+.slide.midi-2.did-step-hit-key-2 .finger {
+	transition: none;
+	transform: scale(0.9) translate(0.1em, 0);
+}
+.slide.midi-2.did-step-hit-key-2 .key-down-2 {
+	visibility: visible;
+}
+.slide.midi-2.did-step-hit-key-2 .bubble-2 {
+	visibility: visible;
+}
+
+.slide.midi-3 table {
+	background: white;
+	color: black;
+	border-radius: 0.25em;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	box-sizing: border-box;
+}
+.slide.midi-3 table th,
+.slide.midi-3 table td {
+	padding: 0.3em;
+	border-right: 9px solid #eb4500;
+}
+.slide.midi-3 table th:last-child,
+.slide.midi-3 table td:last-child {
+	border-right: none;
+}
+.slide.midi-3 .head-2 th:first-child,
+.slide.midi-3 .english td:first-child,
+.slide.midi-3 .binary td:first-child {
+	border-right: 9px solid #2f2f2f;
+}
+.slide.midi-3 .head-1 th:first-child {
+}
+.slide.midi-3 table .binary {
+	font-family: 'Source Code Pro';
+	font-size: 0.8em;
+}
+.slide.midi-3 .head-1 {
+	background: #2f2f2f;
+	color: white;
+}
+.slide.midi-3 .head-2 {
+	background: #c3c3c3;
+}
+.slide.midi-3 .english {
+	font-family: 'Source Code Pro';
+	font-size: 0.8em;
+	border-bottom: 4px solid #c3c3c3;
+}
+.slide.midi-3 .head-2,
+.slide.midi-3 .english,
+.slide.midi-3 .binary {
+	opacity: 0;
+}
+.slide.midi-3.did-step-2 .head-2 {
+	opacity: 1;
+}
+.slide.midi-3.did-step-3 .english {
+	opacity: 1;
+}
+.slide.midi-3.did-step-4 .binary {
+	opacity: 1;
+}
+
+.slide.midi-4 li {
+	visibility: hidden;
+}
+.slide.midi-4.did-step-2 .msg-2,
+.slide.midi-4.did-step-3 .msg-3,
+.slide.midi-4.did-step-4 .msg-4,
+.slide.midi-4.did-step-5 .msg-5,
+.slide.midi-4.did-step-6 .msg-6,
+.slide.midi-4.did-step-7 .msg-7,
+.slide.midi-4.did-step-8 .msg-8 {
+	visibility: visible;
+}
+
+.slide.demo-1 .content {
+	transform: none !important;
+	top: 0;
+	left: 0;
+	padding: 0;
+}
+.slide.demo-1 iframe {
+	width: 100vw;
+	height: 100vh;
+	border: none;
+}

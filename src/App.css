@@ -1,0 +1,49 @@
+.App {
+	text-align: center;
+	/* width: 100vw;
+  height: 56.25vw;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%); */
+	color: white;
+	font-family: 'League Spartan';
+}
+
+.App > footer {
+	position: fixed;
+	left: 1em;
+	bottom: 1em;
+	opacity: 0.5;
+}
+
+.App .slide-show-controls button {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 2em;
+	background: rgba(0, 0, 0, 0.5);
+	border: none;
+	font-size: 2em;
+	color: white;
+	font-weight: bold;
+	opacity: 0;
+	cursor: pointer;
+	transition: opacity 1s;
+}
+
+.App .slide-show-controls button:hover {
+	opacity: 1;
+}
+
+.App .slide-show-controls .prev {
+	left: 0;
+}
+.App .slide-show-controls .next {
+	right: 0;
+}
+
+.container {
+	transform: translate(-100vw) scale(0.5) !important;
+	overflow: visible !important;
+}

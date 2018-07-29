@@ -1,0 +1,28 @@
+.webcam {
+	background: black;
+	border-radius: 0.25em;
+}
+
+.webcam .container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.webcam select {
+	font-size: 16pt;
+	position: absolute;
+	left: 50%;
+	bottom: 1em;
+	transform: translate(-50%, 0);
+	display: none;
+}
+
+.webcam:hover select {
+	display: block;
+}
+
+.webcam video {
+	width: 100%;
+	height: 100%;
+}

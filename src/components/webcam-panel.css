@@ -1,0 +1,24 @@
+.webcam-panel {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	width: 300px;
+	transition: width 0.2s;
+}
+
+.webcam-panel.is-expanded {
+	width: 100vw;
+	max-height: 100vh;
+}
+
+.webcam-panel .webcam {
+	width: 100%;
+	height: 100%;
+}
+
+.webcam-panel button {
+	position: absolute;
+	left: 50%;
+	top: 1em;
+	transform: translate(-50%, 0);
+}
