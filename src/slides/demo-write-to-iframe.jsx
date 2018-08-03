@@ -4,17 +4,17 @@ import React, { Component, Fragment } from 'react'
 
 export default class SlideContent extends Component {
 	static get name() {
-		return 'modal'
+		return 'demo-write-to-iframe'
 	}
 
-	// static get steps() {
-	// 	return ['start', 'h1', 'h2']
-	// }
+	static get classes() {
+		return 'demo'
+	}
 
 	render() {
 		return (
 			<Fragment>
-				<iframe src="http://instagram.com/p/Be__NBYFhfH/embed" frameborder="0" />
+				<iframe allow="camera; microphone; midi" src="http://localhost:3002/" />
 			</Fragment>
 		)
 	}

@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import NullSlide from '../slides/null-slide'
 import Slide from '../components/slide'
 
-const SLIDE_TRANSITION_MS = 5000
+const SLIDE_TRANSITION_MS = 500
 
 class SlideShow extends Component {
 	constructor(props) {
@@ -13,7 +13,8 @@ class SlideShow extends Component {
 
 		this.state = {
 			movement: 'idle',
-			currentSlideIndex: props.currentSlideIndex
+			currentSlideIndex: props.currentSlideIndex,
+			currentStepIndex: props.currentStepIndex
 		}
 	}
 
@@ -31,17 +32,18 @@ class SlideShow extends Component {
 
 		this.setState({
 			currentSlideIndex: this.state.currentSlideIndex + i,
+			currentStepIndex: this.state.currentStepIndex + i,
 			movement: 'idle'
 		})
 
-		this.updateSlide(this.props.currentSlideIndex)
+		this.updateSlide(this.props.currentSlideIndex, this.props.currentStepIndex)
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.updateSlide(nextProps.currentSlideIndex)
+		this.updateSlide(nextProps.currentSlideIndex, nextProps.currentStepIndex)
 	}
 
-	updateSlide(currentSlideIndex) {
+	updateSlide(currentSlideIndex, currentStepIndex) {
 		console.log('updateSlide from', this.state.currentSlideIndex, 'to', currentSlideIndex)
 
 		if (currentSlideIndex < this.state.currentSlideIndex) {
@@ -50,6 +52,8 @@ class SlideShow extends Component {
 		} else if (currentSlideIndex > this.state.currentSlideIndex) {
 			this.setState({ movement: 'right' })
 			setTimeout(this.moveToSlide.bind(this), SLIDE_TRANSITION_MS)
+		} else {
+			this.setState({ currentStepIndex })
 		}
 	}
 
@@ -86,11 +90,11 @@ class SlideShow extends Component {
 				: NullSlide
 
 		// debugger
-		console.log('what is', this.props)
+		console.log('what is', this.props, this.state)
 
-		let currentSlideData = this.props.steps[this.props.currentStepIndex]
-		let prevStepIndex = this.getLastStepIndexForPrevSlide(this.props.currentStepIndex, PrevSlide)
-		let nextStepIndex = this.getFirstStepIndexForNextSlide(this.props.currentStepIndex, NextSlide)
+		let currentSlideData = this.props.steps[this.state.currentStepIndex]
+		let prevStepIndex = this.getLastStepIndexForPrevSlide(this.state.currentStepIndex, PrevSlide)
+		let nextStepIndex = this.getFirstStepIndexForNextSlide(this.state.currentStepIndex, NextSlide)
 		let prevSlideData = this.props.steps[prevStepIndex]
 		let nextSlideData = this.props.steps[nextStepIndex]
 		//let nextSlideData = this.props.steps[this.props.current]
@@ -107,8 +111,8 @@ class SlideShow extends Component {
 								isCurrentSlide={false}
 								sf={this.props.sf}
 								content={PrevSlide}
-								currentStep={prevSlideData.step}
-								steps={prevSlideData.steps}
+								currentStep={prevSlideData ? prevSlideData.step : null}
+								steps={prevSlideData ? prevSlideData.steps : []}
 							/>
 						) : null,
 						// <CurrentSlide sf={this.state.sf} />,
@@ -129,11 +133,15 @@ class SlideShow extends Component {
 								isCurrentSlide={false}
 								sf={this.props.sf}
 								content={NextSlide}
-								currentStep={nextSlideData.step}
-								steps={nextSlideData.steps.slice(
-									0,
-									nextSlideData.steps.indexOf(nextSlideData.step) + 1
-								)}
+								currentStep={nextSlideData ? nextSlideData.step : null}
+								steps={
+									nextSlideData
+										? nextSlideData.steps.slice(
+												0,
+												nextSlideData.steps.indexOf(nextSlideData.step) + 1
+										  )
+										: null
+								}
 							/>
 						) : null
 					]}

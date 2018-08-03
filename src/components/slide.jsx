@@ -39,6 +39,8 @@ class Slide extends Component {
 				className={
 					'slide ' +
 					this.props.content.name +
+					' ' +
+					this.props.content.classes +
 					(this.props.isCurrentSlide ? ' is-current-slide' : ' is-not-current-slide') +
 					' step-' +
 					this.props.currentStep +

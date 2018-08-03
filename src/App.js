@@ -21,6 +21,8 @@ class App extends Component {
 		this.boundOnKeyUp = this.onKeyUp.bind(this)
 		this.boundOnClickPrev = this.gotoPrevItem.bind(this)
 		this.boundOnClickNext = this.gotoNextItem.bind(this)
+		this.boundOnWebcamPanelClose = this.onWebcamPanelClose.bind(this)
+		this.boundOnWebcamSummon = this.onWebcamSummon.bind(this)
 
 		// get slide steps
 		this.allSteps = []
@@ -39,17 +41,34 @@ class App extends Component {
 		})
 
 		console.log('allSteps', this.allSteps)
+		console.log('stepsBySlide', this.stepsBySlide)
 
 		// let currentSlideIndex = parseInt(window.localStorage.currentSlideIndex) || 0
 		// let currentSlide
+		let indexFromHash = this.getIndexFromHash()
+		console.log('IFH', indexFromHash)
 
 		this.state = {
-			webcamExpanded: false,
-			currentSlideIndex: parseInt(window.localStorage.currentSlideIndex) || 0,
-			currentStepIndex: parseInt(window.localStorage.currentStepIndex) || 0,
+			webcamExpanded: Boolean(window.localStorage.webcamExpanded === 'true') || false,
+			webcamSummoned: Boolean(window.localStorage.webcamSummoned === 'true') || false,
+			currentSlideIndex: indexFromHash.slide,
+			currentStepIndex: indexFromHash.step,
 			// currentSlideIndex: 0,
 			sf: 1
 		}
+	}
+
+	getIndexFromHash() {
+		let h = ('' + window.location.hash).replace('#', '')
+		let n = parseInt(h, 10) || 0
+
+		for (let i = 0, len = this.allSteps.length; i < len; i++) {
+			if (this.allSteps[i].slide === slides[n]) {
+				return { step: i, slide: n }
+			}
+		}
+
+		return { step: 0, slide: 0 }
 	}
 
 	onResize(event) {
@@ -60,10 +79,30 @@ class App extends Component {
 		})
 	}
 
-	onWebcamPanelToggle() {
+	onWebcamPanelClose() {
 		this.setState({
-			webcamExpanded: !this.state.webcamExpanded
+			webcamSummoned: false,
+			webcamExpanded: false
 		})
+		window.localStorage.webcamSummoned = false
+		window.localStorage.webcamExpanded = false
+	}
+
+	onWebcamSummon() {
+		console.log('ows')
+		this.setState({
+			webcamSummoned: true
+		})
+		window.localStorage.webcamSummoned = true
+	}
+
+	onWebcamPanelToggle() {
+		let newValue = !this.state.webcamExpanded
+
+		this.setState({
+			webcamExpanded: newValue
+		})
+		window.localStorage.webcamExpanded = newValue
 	}
 
 	onKeyUp(event) {
@@ -89,14 +128,23 @@ class App extends Component {
 			this.setState({
 				currentSlideIndex: this.state.currentSlideIndex + 1
 			})
+
+			// debugger
+
+			// console.log('weeeeee', currentSlide, currentSlide.prototype.features)
+			let wantsWebcam = nextStep.slide.features && nextStep.slide.features.indexOf('webcam') > -1
+			if (wantsWebcam) {
+				this.onWebcamSummon()
+			} else {
+				this.onWebcamPanelClose()
+			}
 		}
 
 		this.setState({
 			currentStepIndex: this.state.currentStepIndex + 1
 		})
 
-		window.localStorage.currentSlideIndex = this.state.currentSlideIndex
-		window.localStorage.currentStepIndex = this.state.currentStepIndex
+		window.location.hash = this.state.currentSlideIndex
 	}
 
 	gotoPrevItem() {
@@ -110,14 +158,22 @@ class App extends Component {
 			this.setState({
 				currentSlideIndex: this.state.currentSlideIndex - 1
 			})
+
+			let wantsWebcam = prevStep.slide.features && prevStep.slide.features.indexOf('webcam') > -1
+			if (wantsWebcam) {
+				this.onWebcamSummon()
+			} else {
+				this.onWebcamPanelClose()
+			}
 		}
 
 		this.setState({
 			currentStepIndex: this.state.currentStepIndex - 1
 		})
 
-		window.localStorage.currentSlideIndex = this.state.currentSlideIndex
-		window.localStorage.currentStepIndex = this.state.currentStepIndex
+		window.location.hash = this.state.currentSlideIndex // + ':' + this.state.currentSlideIndex
+		// window.localStorage.currentSlideIndex = this.state.currentSlideIndex
+		// window.localStorage.currentStepIndex = this.state.currentStepIndex
 	}
 
 	componentDidMount() {
@@ -147,6 +203,9 @@ class App extends Component {
 				<WebcamPanel
 					expanded={this.state.webcamExpanded}
 					onToggle={this.boundOnWebcamPanelToggle}
+					onClose={this.boundOnWebcamPanelClose}
+					onSummon={this.boundOnWebcamSummon}
+					isSummoned={this.state.webcamSummoned}
 				/>
 				<Footer />
 			</div>

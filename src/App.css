@@ -19,8 +19,8 @@
 
 .App .slide-show-controls button {
 	position: fixed;
-	top: 0;
-	bottom: 0;
+	top: 4em;
+	bottom: 4em;
 	width: 2em;
 	background: rgba(0, 0, 0, 0.5);
 	border: none;
@@ -42,8 +42,8 @@
 .App .slide-show-controls .next {
 	right: 0;
 }
-
+/*
 .container {
 	transform: translate(-100vw) scale(0.5) !important;
 	overflow: visible !important;
-}
+} */

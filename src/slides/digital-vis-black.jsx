@@ -7,6 +7,10 @@ export default class SlideContent extends Component {
 		return 'digital-vis-black'
 	}
 
+	static get steps() {
+		return ['start', 'about', 'about-2', 'about-3', 'hrmm']
+	}
+
 	render() {
 		return (
 			<Fragment>
@@ -23,6 +27,16 @@ export default class SlideContent extends Component {
 					<div>"23 iSH"</div>
 					<div>Video: [audioreact•lab]</div>
 				</div>
+				<div className="about">
+					<ul>
+						<li className="step-1">What if I could create videos like this live?</li>
+						<li className="step-2">
+							I could totally make these with <code>&lt;canvas&gt;</code> or SVG!
+						</li>
+						<li className="step-3">🤔</li>
+					</ul>
+				</div>
+				<div className="hrmm">🤔</div>
 			</Fragment>
 		)
 	}

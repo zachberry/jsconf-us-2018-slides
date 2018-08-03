@@ -4,8 +4,10 @@
 	"private": true,
 	"dependencies": {
 		"react": "^16.4.1",
+		"react-ace": "^6.1.4",
 		"react-dom": "^16.4.1",
-		"react-scripts": "1.1.4"
+		"react-scripts": "1.1.4",
+		"react-syntax-highlighter": "^8.0.1"
 	},
 	"scripts": {
 		"start": "set HTTPS=true&&react-scripts start",

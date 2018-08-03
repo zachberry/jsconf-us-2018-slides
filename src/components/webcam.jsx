@@ -15,7 +15,7 @@ export default class Webcam extends React.Component {
 	}
 
 	onChange(event) {
-		this.setActiveStream(event)
+		this.setActiveStream()
 	}
 
 	setActiveStream() {
@@ -30,6 +30,7 @@ export default class Webcam extends React.Component {
 	createVideoDeviceList(devices) {
 		let videoDevices = {}
 		devices.filter(device => device.kind === 'videoinput').forEach(device => {
+			console.log('device', device)
 			videoDevices[device.deviceId] = device.deviceId
 		})
 		this.setState({ videoDevices })
@@ -47,7 +48,6 @@ export default class Webcam extends React.Component {
 	}
 
 	componentDidMount() {
-		return
 		navigator.mediaDevices
 			.enumerateDevices()
 			.then(this.createVideoDeviceList.bind(this))

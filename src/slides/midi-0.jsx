@@ -4,17 +4,13 @@ import React, { Component, Fragment } from 'react'
 
 export default class SlideContent extends Component {
 	static get name() {
-		return 'modal'
+		return 'midi-0'
 	}
-
-	// static get steps() {
-	// 	return ['start', 'h1', 'h2']
-	// }
 
 	render() {
 		return (
 			<Fragment>
-				<iframe src="http://instagram.com/p/Be__NBYFhfH/embed" frameborder="0" />
+				<h1>1981</h1>
 			</Fragment>
 		)
 	}

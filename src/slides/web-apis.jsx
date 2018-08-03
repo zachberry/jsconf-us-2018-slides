@@ -19,6 +19,9 @@ export default class SlideContent extends Component {
 					<li>2D graphics with canvas</li>
 					<li>3D graphics with WebGL</li>
 					<li>Vectors with SVG</li>
+					<li>
+						<code>&lt;video&gt;</code>
+					</li>
 					<li className="library">Three.js</li>
 					<li className="library">Pixi.js</li>
 					<li className="api">Web Audio API</li>

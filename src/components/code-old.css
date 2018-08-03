@@ -1,0 +1,30 @@
+.code {
+	width: 100%;
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.code > .code-container {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.code > .code-container > pre {
+	border-radius: 0.25em;
+	tab-size: 2;
+	font-size: 0.9em;
+	margin: 0;
+	background: black !important;
+	color: white !important;
+	white-space: pre-wrap;
+}
+.code > .code-container.root {
+	position: static;
+	opacity: 1;
+}
+.code > .code-container.is-current-step {
+	opacity: 0.7;
+}

@@ -1,0 +1,14 @@
+.code {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.code > pre {
+	border-radius: 0.25em;
+	tab-size: 2;
+	font-size: 0.9em;
+	margin: 0;
+	background: black !important;
+	color: white !important;
+	white-space: pre-wrap;
+}
