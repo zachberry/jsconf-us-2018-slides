@@ -26,8 +26,6 @@ class SlideShow extends Component {
 			i = -1
 		}
 
-		console.log('moveToSlide by', i)
-
 		if (i === 0) return
 
 		this.setState({
@@ -76,7 +74,6 @@ class SlideShow extends Component {
 	}
 
 	render() {
-		console.log(this.props.slides)
 		let PrevSlide =
 			this.state.currentSlideIndex > 0
 				? this.props.slides[this.state.currentSlideIndex - 1]
@@ -87,17 +84,11 @@ class SlideShow extends Component {
 				? this.props.slides[this.state.currentSlideIndex + 1]
 				: NullSlide
 
-		// debugger
-		console.log('what is', this.props, this.state)
-
 		let currentSlideData = this.props.steps[this.state.currentStepIndex]
 		let prevStepIndex = this.getLastStepIndexForPrevSlide(this.state.currentStepIndex, PrevSlide)
 		let nextStepIndex = this.getFirstStepIndexForNextSlide(this.state.currentStepIndex, NextSlide)
 		let prevSlideData = this.props.steps[prevStepIndex]
 		let nextSlideData = this.props.steps[nextStepIndex]
-		//let nextSlideData = this.props.steps[this.props.current]
-
-		console.log(prevStepIndex, nextStepIndex, prevSlideData, currentSlideData, nextSlideData)
 
 		return (
 			<div className={'slide-show is-movement-' + this.state.movement}>

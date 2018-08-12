@@ -30,7 +30,6 @@ export default class Webcam extends React.Component {
 	createVideoDeviceList(devices) {
 		let videoDevices = {}
 		devices.filter(device => device.kind === 'videoinput').forEach(device => {
-			console.log('device', device)
 			videoDevices[device.deviceId] = device.deviceId
 		})
 		this.setState({ videoDevices })

@@ -26,7 +26,6 @@ export default class SlideContent extends Component {
 	}
 
 	componentDidUpdate() {
-		console.log('CDU', this.props)
 		switch (this.props.step) {
 			case 'break':
 				document.body.style.transform = 'rotate(20deg)'

@@ -41,20 +41,13 @@ class App extends Component {
 			})
 		})
 
-		console.log('allSteps', this.allSteps)
-		console.log('stepsBySlide', this.stepsBySlide)
-
-		// let currentSlideIndex = parseInt(window.localStorage.currentSlideIndex) || 0
-		// let currentSlide
 		let indexFromHash = this.getIndexFromHash()
-		console.log('IFH', indexFromHash)
 
 		this.state = {
 			webcamExpanded: Boolean(window.localStorage.webcamExpanded === 'true') || false,
 			webcamSummoned: Boolean(window.localStorage.webcamSummoned === 'true') || false,
 			currentSlideIndex: indexFromHash.slide,
 			currentStepIndex: indexFromHash.step,
-			// currentSlideIndex: 0,
 			sf: 1,
 			vidKidURL: window.localStorage.vidKidURL
 				? window.localStorage.vidKidURL
@@ -93,7 +86,6 @@ class App extends Component {
 	}
 
 	onWebcamSummon() {
-		console.log('ows')
 		this.setState({
 			webcamSummoned: true
 		})
@@ -143,9 +135,6 @@ class App extends Component {
 				currentSlideIndex: this.state.currentSlideIndex + 1
 			})
 
-			// debugger
-
-			// console.log('weeeeee', currentSlide, currentSlide.prototype.features)
 			let wantsWebcam = nextStep.slide.features && nextStep.slide.features.indexOf('webcam') > -1
 			if (wantsWebcam) {
 				this.onWebcamSummon()
@@ -162,7 +151,6 @@ class App extends Component {
 	}
 
 	gotoPrevItem() {
-		console.log('GTPI')
 		if (this.state.currentStepIndex === 0) return
 
 		let prevStep = this.allSteps[this.state.currentStepIndex - 1]
