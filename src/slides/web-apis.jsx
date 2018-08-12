@@ -16,7 +16,9 @@ export default class SlideContent extends Component {
 			<Fragment>
 				<ul>
 					<li>CSS Animations</li>
-					<li>2D graphics with canvas</li>
+					<li>
+						2D graphics with <code>&lt;canvas&gt;</code>
+					</li>
 					<li>3D graphics with WebGL</li>
 					<li>Vectors with SVG</li>
 					<li>

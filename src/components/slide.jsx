@@ -31,7 +31,6 @@ class Slide extends Component {
 	// }
 
 	render() {
-		console.log('sc', this.props.content)
 		let SC = this.props.content
 
 		return (
@@ -54,7 +53,11 @@ class Slide extends Component {
 					className="content"
 					style={{ transform: `translate(-50%, -50%) scale(${this.props.sf})` }}
 				>
-					<SC isCurrentSlide={this.props.isCurrentSlide} step={this.props.currentStep} />
+					<SC
+						vidKidURL={this.props.vidKidURL}
+						isCurrentSlide={this.props.isCurrentSlide}
+						step={this.props.currentStep}
+					/>
 				</div>
 			</div>
 		)

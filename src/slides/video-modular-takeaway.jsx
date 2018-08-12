@@ -7,9 +7,9 @@ export default class SlideContent extends Component {
 		return 'video-modular-takeaway'
 	}
 
-	static get steps() {
-		return ['start', 1, 2, 3]
-	}
+	// static get steps() {
+	// 	return ['start', 1, 2, 3]
+	// }
 
 	render() {
 		return (
@@ -18,7 +18,7 @@ export default class SlideContent extends Component {
 				<ol>
 					<li className="step-1">It's analog, it's VHS, it's smudgy, it's lo-fi.</li>
 					<li className="step-2">
-						I like lo-fi, but I also like <code>DIGITAL</code>.
+						I like lo-fi, but I also like <code>DIGITAL</code>...
 					</li>
 				</ol>
 			</Fragment>

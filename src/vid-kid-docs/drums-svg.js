@@ -1,66 +1,4 @@
 export default {
-	nodeMap: {
-		nodeMap: { n6: { n5: 1 }, n5: { n4: 3 } },
-		portMap: {
-			'n6.note-on': { 'n5.note-on': true },
-			'n5.BD': { 'n4.bd': true },
-			'n5.SD': { 'n4.snare': true },
-			'n5.CH': { 'n4.hh': true }
-		},
-		inputsMap: {
-			'n5.note-on': { 'n6.note-on': true },
-			'n4.bd': { 'n5.BD': true },
-			'n4.snare': { 'n5.SD': true },
-			'n4.hh': { 'n5.CH': true }
-		},
-		values: {
-			n5: { 'note-on': '153,49,80' },
-			n6: {
-				'device-id': '-486371328',
-				channel: 0,
-				message: false,
-				realtime: false,
-				beat: 'quarter note',
-				'note-on': true,
-				'note-off': false,
-				cc: false,
-				'zero-as-off': true
-			},
-			n4: { bd: true, snare: true, hh: true, factory: 100 }
-		},
-		nextId: 7,
-		nodeOrder: ['n5', 'n6', 'n4'],
-		byId: {
-			n5: {
-				id: 'n5',
-				rev: 0,
-				text:
-					'class TR8SDrumMap extends N {\n\n\tstatic get inputs() {\n\t\treturn [\n\t\t\t{\n\t\t\t\tname: "note-on",\n\t\t\t\tobserve: true,\n\t\t\t\tdefaultValue: "",\n\t\t\t\trestrict: String\n\t\t\t}\n\t\t];\n\t}\n\n\tstatic get outputs() {\n\t\treturn ["BD", "SD", "LT", "MT", "HT", "RS", "HC", "CH", "OH", "CC", "RC"];\n\t}\n\n\tattributeChangedCallback(name, oldValue, newValue) {\n\t\tconsole.log(\'ACC\', name, oldValue, newValue);\n\n\t\tlet midiData = newValue;\n\t\tlet noteNum = parseInt(midiData.split(",")[1])\n\n\t\tswitch(noteNum) {\n\t\t\tcase 0x24: this.send("BD", midiData); break;\n\t\t\tcase 0x26: this.send("SD", midiData); break;\n\t\t\tcase 0x2B: this.send("LT", midiData); break;\n\t\t\tcase 0x2F: this.send("MT", midiData); break;\n\t\t\tcase 0x32: this.send("HT", midiData); break;\n\t\t\tcase 0x25: this.send("RS", midiData); break;\n\t\t\tcase 0x27: this.send("HC", midiData); break;\n\t\t\tcase 0x2A: this.send("CH", midiData); break;\n\t\t\tcase 0x2E: this.send("OH", midiData); break;\n\t\t\tcase 0x31: this.send("CC", midiData); break;\n\t\t\tcase 0x33: this.send("RC", midiData); break;\n\t\t}\n\t}\n}',
-				templateHTML: null,
-				templateCSS: null,
-				transforms: {}
-			},
-			n6: {
-				id: 'n6',
-				rev: 0,
-				text:
-					'class MIDIDevice extends N {\n\tstatic get type() { return N.HARDWARE };\n\n\tstatic get inputs() {\n\t\treturn [\n\t\t\t{\n\t\t\t\tname: "device-id",\n\t\t\t\tobserve: true,\n\t\t\t\tdefaultValue: "",\n\t\t\t\trestrict: String,\n\t\t\t\tvisible: false\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "channel",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: 0,\n\t\t\t\trestrict: N.int(0, 16),\n\t\t\t\tcontrol: N.range()\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "message",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: false,\n\t\t\t\trestrict: Boolean\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "realtime",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: false,\n\t\t\t\trestrict: Boolean\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "beat",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: "quarter note",\n\t\t\t\trestrict: N.set(["24ppqn", "quarter note", "bar", "4 bars"])\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "note-on",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: false,\n\t\t\t\trestrict: Boolean\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "note-off",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: false,\n\t\t\t\trestrict: Boolean\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "cc",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: false,\n\t\t\t\trestrict: Boolean\n\t\t\t},\n\t\t\t{\n\t\t\t\tname: "zero-as-off",\n\t\t\t\tobserve: false,\n\t\t\t\tdefaultValue: true,\n\t\t\t\trestrict: Boolean\n\t\t\t}\n\t\t];\n\t}\n\n\tstatic get outputs() {\n\t\treturn ["message", "start", "stop", "continue", "clock", "note-on", "note-off", "cc"];\n\t}\n\n\tconstructor() {\n\t\tsuper();\n\t}\n\n\tsetInput(id) {\n\t\tconsole.log(\'SET INPUT\', id);\n\t\tif(!this.inputs) return;\n\n\t\tthis.removeMIDIListeners();\n\n\t\tif (id !== "") {\n\t\t\tlet input = this.inputs.get(id);\n\t\t\tif (input) {\n\t\t\t\tinput.addEventListener("midimessage", this.boundOnMIDIMessage);\n\t\t\t}\n\t\t}\n\n\t\tthis.root.getElementById(\'select\').value = id;\n\t}\n\n\tattributeChangedCallback(name, oldValue, newValue) {\n\t\tconsole.log(\'ACC\', name, oldValue, newValue);\n\t\tthis.setInput(newValue);\n\t}\n\n\tremoveMIDIListeners() {\n\t\tif (!this.inputs) return;\n\t\tfor (let input of this.inputs.values()) {\n\t\t\tinput.removeEventListener("midimessage", this.boundOnMIDIMessage);\n\t\t}\n\t}\n\n\tonMIDIMessage(event) {\n\t\tlet data = event.data;\n\t\tlet channel = this.getAttribute(\'channel\');\n\t\tlet allowMessage = this.getAttribute(\'message\');\n\t\tlet allowRealTime = this.getAttribute(\'realtime\');\n\t\tlet allowNoteOn = this.getAttribute(\'note-on\');\n\t\tlet allowNoteOff = this.getAttribute(\'note-off\');\n\t\tlet allowCC = this.getAttribute(\'cc\');\n\t\tlet transformNoteOnVelocityZeroAsNoteOff = this.getAttribute(\'zero-as-off\');\n\t\tlet sendClockPerBeat = this.getAttribute(\'beat\');\n\n\t\tif(allowMessage) this.send("message", data.toString())\n\n\t\t//// console.log(\'got midi\', data, channel, allowRealTime, allowNoteOn, allowNoteOff, allowCC)\n\n\t\t// Clock:\n\t\tif(data[0] === 0xFA && allowRealTime) { //start\n\t\t\tthis.sendClock = true;\n\t\t\tthis.clock = 0;\n\t\t\treturn this.send(\'start\', data.toString());\n\t\t}\n\t\tif(data[0] === 0xFC && allowRealTime) { //stop\n\t\t\tthis.sendClock = false;\n\t\t\tthis.clock = 0;\n\t\t\treturn this.send(\'stop\', data.toString());\n\t\t}\n\t\tif(data[0] === 0xFB && allowRealTime) { //continue\n\t\t\treturn this.send(\'continue\', data.toString());\n\t\t}\n\t\tif(data[0] === 0xF8 && allowRealTime && this.sendClock) {\n\t\t\tlet shouldSendBeat = false;\n\t\t\tswitch(sendClockPerBeat) {\n\t\t\t\tcase "24ppqn":\n\t\t\t\t\tshouldSendBeat = true;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase "quarter note":\n\t\t\t\t\tshouldSendBeat = this.clock % 24 === 0;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase "bar":\n\t\t\t\t\tshouldSendBeat = this.clock % 96 === 0;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase "4 bars":\n\t\t\t\t\tshouldSendBeat = this.clock === 0;\n\t\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif(shouldSendBeat) this.send(\'clock\', data.toString());\n\t\t\tthis.clock = (this.clock + 1) % 384; //24ppqn * 4 quarter notes * 4 bars\n\t\t}\n\n\t\t// Channel messages:\n\t\tif(channel === 0 || channel === (data[0] & 0x0F) + 1) {\n\t\t\tlet type = data[0] >> 4;\n\n\t\t\tif(type === 0x9 && data[2] === 0 && transformNoteOnVelocityZeroAsNoteOff) {\n\t\t\t\ttype = 0x8\n\t\t\t}\n\n\t\t\tif(type === 0x9 && allowNoteOn) return this.send(\'note-on\', data.toString());\n\t\t\tif(type === 0x8 && allowNoteOff) return this.send(\'note-off\', data.toString());\n\t\t\tif(type === 0xB && allowCC) return this.send(\'cc\', data.toString());\n\t\t}\n\t}\n\n\tonMIDISuccess(midiAccess) {\n\t\tconsole.log(\'MIDI SUCCESS\', midiAccess);\n\t\tthis.inputs = midiAccess.inputs;\n\t\tlet select = this.root.getElementById("select");\n\n\t\tlet option = document.createElement("option");\n\t\toption.innerText = "Select device...";\n\t\toption.value = "";\n\t\tselect.appendChild(option);\n\n\t\tfor (let input of this.inputs.values()) {\n\t\t\tconsole.log(input);\n\t\t\toption = document.createElement("option");\n\t\t\toption.innerText = input.manufacturer + " " + input.name;\n\t\t\toption.value = input.id;\n\t\t\tselect.appendChild(option);\n\t\t}\n\n\t\t// let deviceId = this.getAttribute(\'device-id\');\n\t\t// select.value = deviceId;\n\n\t\tselect.addEventListener("change", event => {\n\t\t\tconsole.log("you did it", event.target.value);\n\t\t\tthis.setAttribute("device-id", event.target.value);\n\t\t});\n\n\t\t// Force listener to listen:\n\t\tthis.setInput(this.getAttribute(\'device-id\'));\n\t}\n\n\tonMIDIFailure() {\n\t\talert("Unable to obtain MIDI access!");\n\t}\n\n\treadyCallback() {\n\t\tconsole.log("MIDIDEVICE READY!");\n\n\t\tthis.boundOnMIDIMessage = this.onMIDIMessage.bind(this);\n\t\tnavigator\n\t\t\t.requestMIDIAccess()\n\t\t\t.then(this.onMIDISuccess.bind(this), this.onMIDIFailure.bind(this));\n\t}\n\n\tdestroyCallback() {\n\t\tconsole.error("MIDIDEVICE DESTROY!");\n\t\tthis.removeMIDIListeners();\n\t}\n}',
-				templateHTML: '<div>\n\t<select id="select"></select>\n</div>',
-				templateCSS: null,
-				transforms: {}
-			},
-			n4: {
-				id: 'n4',
-				rev: 19,
-				text:
-					"class Drumsz extends N {\n\tstatic get inputs() {\n\t  return [\n\t\t\t{\n\t\t\t\tname: 'bd',\n\t\t\t\tobserve: true,\n\t\t\t\tcontrol: N.button()\n\t\t\t},\n\t\t\t{\n\t\t\t    name: 'snare',\n\t\t\t    observe: true,\n\t\t\t    control: N.button()\n\t\t\t},\n\t\t\t{\n\t\t\t    name: 'hh',\n\t\t\t    observe: true,\n\t\t\t    control: N.button()\n\t\t\t},\n\t\t\t{\n\t\t\t    name: 'factory',\n\t\t\t    observe: true,\n\t\t\t    defaultValue: 0,\n\t\t\t    restrict: N.float(0, 100)\n\t\t\t}\n\t\t]\n\t}\n\n\tattributeChangedCallback(name, oldValue, newValue) {\n\t    if(name === 'factory') {\n\t        this.screen.getElementById('factory').style.opacity = parseFloat(newValue) / 100\n\t        return\n\t    }\n\t    \n\t    this.screen.body.classList.add(name);\n\t\t\tsetTimeout(() => this.screen.body.classList.remove(name), 100);\n\t}\n}",
-				templateHTML: null,
-				templateCSS: null,
-				transforms: {}
-			}
-		},
-		chainPool: { nodeIdToChainId: {}, nextChainId: 0, pool: {} }
-	},
 	editingNodeId: null,
 	editingPage: false,
 	selectedConnection: null,
@@ -76,10 +14,88 @@ export default {
 		n3: { pos: [1088, 404] },
 		n4: {
 			pos: [621, 177],
-			control: { bd: true, snare: true, hh: true, factory: true, 'factory-size': true }
+			control: { bd: true, snare: true, hh: true, factory: true }
 		},
 		n5: { pos: [344, 49] },
-		n6: { pos: [26, 18], control: { 'note-on': true } }
+		n6: { pos: [26, 18] },
+		n7: { pos: [345, 301] },
+		n8: { pos: [40, 22] }
 	},
-	fullscreen: false
+	fullscreen: false,
+	nodeMap: {
+		nodeMap: { n5: { n4: 3 }, n7: { n4: 1 }, n8: { n5: 1, n7: 1 } },
+		portMap: {
+			'n5.BD': { 'n4.bd': true },
+			'n5.SD': { 'n4.snare': true },
+			'n5.CH': { 'n4.hh': true },
+			'n7.RC': { 'n4.factory': true },
+			'n8.note-on': { 'n5.note-on': true },
+			'n8.cc': { 'n7.cc': true }
+		},
+		inputsMap: {
+			'n4.bd': { 'n5.BD': true },
+			'n4.snare': { 'n5.SD': true },
+			'n4.hh': { 'n5.CH': true },
+			'n4.factory': { 'n7.RC': true },
+			'n5.note-on': { 'n8.note-on': true },
+			'n7.cc': { 'n8.cc': true }
+		},
+		nextId: 9,
+		nodeOrder: ['n5', 'n8', 'n7', 'n4'],
+		values: {
+			n5: { 'note-on': '153,42,80' },
+			n4: { bd: true, snare: '153,38,80', hh: '153,42,80', factory: 0 },
+			n7: { cc: [185, 88, 0] },
+			n8: {
+				'device-id': '-486371328',
+				channel: 0,
+				message: false,
+				realtime: false,
+				beat: 'quarter note',
+				'note-on': true,
+				'note-off': false,
+				cc: true,
+				'zero-as-off': true
+			}
+		},
+		byId: {
+			n5: {
+				id: 'n5',
+				rev: 0,
+				text:
+					'class TR8SDrumMap extends N {\n\n\tstatic get inputs() {\n\t\treturn [\n\t\t\t{\n\t\t\t\tname: "note-on",\n\t\t\t\tobserve: true,\n\t\t\t\tdefaultValue: "",\n\t\t\t\trestrict: String\n\t\t\t}\n\t\t];\n\t}\n\n\tstatic get outputs() {\n\t\treturn ["BD", "SD", "LT", "MT", "HT", "RS", "HC", "CH", "OH", "CC", "RC"];\n\t}\n\n\tonAttrChanged(name, oldValue, newValue) {\n\t\tconsole.log(\'ACC\', name, oldValue, newValue);\n\n\t\tlet midiData = newValue;\n\t\tlet noteNum = parseInt(midiData.split(",")[1])\n\n\t\tswitch(noteNum) {\n\t\t\tcase 0x24: this.send("BD", midiData); break;\n\t\t\tcase 0x26: this.send("SD", midiData); break;\n\t\t\tcase 0x2B: this.send("LT", midiData); break;\n\t\t\tcase 0x2F: this.send("MT", midiData); break;\n\t\t\tcase 0x32: this.send("HT", midiData); break;\n\t\t\tcase 0x25: this.send("RS", midiData); break;\n\t\t\tcase 0x27: this.send("HC", midiData); break;\n\t\t\tcase 0x2A: this.send("CH", midiData); break;\n\t\t\tcase 0x2E: this.send("OH", midiData); break;\n\t\t\tcase 0x31: this.send("CC", midiData); break;\n\t\t\tcase 0x33: this.send("RC", midiData); break;\n\t\t}\n\t}\n}',
+				templateHTML: null,
+				templateCSS: null,
+				transforms: {}
+			},
+			n4: {
+				id: 'n4',
+				rev: 16,
+				text:
+					"class Drumsz extends N {\n\tstatic get inputs() {\n\t  return [\n\t\t\t{\n\t\t\t\tname: 'bd',\n\t\t\t\tobserve: true,\n\t\t\t\tcontrol: N.button()\n\t\t\t},\n\t\t\t{\n\t\t\t    name: 'snare',\n\t\t\t    observe: true,\n\t\t\t    control: N.button()\n\t\t\t},\n\t\t\t{\n\t\t\t    name: 'hh',\n\t\t\t    observe: true,\n\t\t\t    control: N.button()\n\t\t\t},\n\t\t\t{\n\t\t\t    name: 'factory',\n\t\t\t    observe: true,\n\t\t\t    defaultValue: 0,\n\t\t\t    restrict: N.float(0, 100)\n\t\t\t}\n\t\t]\n\t}\n\n\tonAttrChanged(name, oldValue, newValue) {\n\t    if(name === 'factory') {\n\t        this.screen.getElementById('factory').style.opacity = parseFloat(newValue) / 100\n\t        return\n\t    }\n\t    \n\t    this.screen.body.classList.add(name);\n\t\t\tsetTimeout(() => this.screen.body.classList.remove(name), 100);\n\t}\n}",
+				templateHTML: null,
+				templateCSS: null,
+				transforms: {}
+			},
+			n7: {
+				id: 'n7',
+				rev: 0,
+				text:
+					'class TR8SCCMap extends N {\n  static get inputs() {\n    return [{\n      name: "cc",\n      observe: true\n    }];\n  }\n\n  static get outputs() {\n    return ["BD", "SD", "LT", "MT", "HT", "RS", "HC", "CH", "OH", "CC", "RC"];\n  }\n\n  onAttrChanged(name, oldValue, newValue) {\n    let midiData = this.getAttribute("cc");\n    if (!(midiData instanceof Array)) return;\n    let ccNum = parseInt(midiData[1], 10);\n    let ccVal = parseInt(midiData[2], 10);\n\n    switch (ccNum) {\n      case 0x18:\n        this.send("BD", ccVal);\n        break;\n\n      case 0x1d:\n        this.send("SD", ccVal);\n        break;\n\n      case 0x30:\n        this.send("LT", ccVal);\n        break;\n\n      case 0x33:\n        this.send("MT", ccVal);\n        break;\n\n      case 0x36:\n        this.send("HT", ccVal);\n        break;\n\n      case 0x39:\n        this.send("RS", ccVal);\n        break;\n\n      case 0x3c:\n        this.send("HC", ccVal);\n        break;\n\n      case 0x3f:\n        this.send("CH", ccVal);\n        break;\n\n      case 0x52:\n        this.send("OH", ccVal);\n        break;\n\n      case 0x55:\n        this.send("CC", ccVal);\n        break;\n\n      case 0x58:\n        this.send("RC", ccVal);\n        break;\n    }\n  }\n\n}',
+				templateHTML: null,
+				templateCSS: null,
+				transforms: {}
+			},
+			n8: {
+				id: 'n8',
+				rev: 0,
+				text:
+					'class MIDIDevice extends N {\n  static get type() {\n    return N.HARDWARE;\n  }\n\n  static get inputs() {\n    return [{\n      name: "device-id",\n      observe: true,\n      defaultValue: "",\n      restrict: String,\n      visible: false\n    }, {\n      name: "channel",\n      observe: false,\n      defaultValue: 0,\n      restrict: N.int(0, 16),\n      control: N.range()\n    }, {\n      name: "message",\n      observe: false,\n      defaultValue: false,\n      restrict: Boolean\n    }, {\n      name: "realtime",\n      observe: false,\n      defaultValue: false,\n      restrict: Boolean\n    }, {\n      name: "beat",\n      observe: false,\n      defaultValue: "quarter note",\n      restrict: N.set(["24ppqn", "quarter note", "bar", "4 bars"])\n    }, {\n      name: "note-on",\n      observe: false,\n      defaultValue: false,\n      restrict: Boolean\n    }, {\n      name: "note-off",\n      observe: false,\n      defaultValue: false,\n      restrict: Boolean\n    }, {\n      name: "cc",\n      observe: false,\n      defaultValue: false,\n      restrict: Boolean\n    }, {\n      name: "zero-as-off",\n      observe: false,\n      defaultValue: true,\n      restrict: Boolean\n    }];\n  }\n\n  static get outputs() {\n    return ["message", "start", "stop", "continue", "clock", "note-on", "note-off", "cc", "bpm"];\n  }\n\n  constructor() {\n    super();\n  }\n\n  setInput(id) {\n    if (!this.inputs) return;\n    this.removeMIDIListeners();\n\n    if (id !== "") {\n      let input = this.inputs.get(id);\n\n      if (input) {\n        input.addEventListener("midimessage", this.boundOnMIDIMessage);\n      }\n    }\n\n    this.root.getElementById("select").value = id;\n  }\n\n  onAttrChanged(name, oldValue, newValue) {\n    this.setInput(newValue);\n  }\n\n  removeMIDIListeners() {\n    if (!this.inputs) return;\n\n    for (let input of this.inputs.values()) {\n      input.removeEventListener("midimessage", this.boundOnMIDIMessage);\n    }\n  }\n\n  onMIDIMessage(event) {\n    let data = Array.from(event.data);\n    let channel = this.getAttribute("channel");\n    let allowMessage = this.getAttribute("message");\n    let allowRealTime = this.getAttribute("realtime");\n    let allowNoteOn = this.getAttribute("note-on");\n    let allowNoteOff = this.getAttribute("note-off");\n    let allowCC = this.getAttribute("cc");\n    let transformNoteOnVelocityZeroAsNoteOff = this.getAttribute("zero-as-off");\n    let sendClockPerBeat = this.getAttribute("beat");\n    if (allowMessage) this.send("message", data); // Clock:\n\n    if (data[0] === 0xfa && allowRealTime) {\n      //start\n      this.sendClock = true;\n      this.clock = 0;\n      return this.send("start", data);\n    }\n\n    if (data[0] === 0xfc && allowRealTime) {\n      //stop\n      this.sendClock = false;\n      this.clock = 0;\n      return this.send("stop", data);\n    }\n\n    if (data[0] === 0xfb && allowRealTime) {\n      //continue\n      return this.send("continue", data);\n    }\n\n    if (data[0] === 0xf8 && allowRealTime && this.sendClock) {\n      if (this.clock % 24 === 0) {\n        let now = Date.now();\n        if (this.lastClock) this.send("bpm", 60000 / (now - this.lastClock));\n        this.lastClock = now;\n      }\n\n      let shouldSendBeat = false;\n\n      switch (sendClockPerBeat) {\n        case "24ppqn":\n          shouldSendBeat = true;\n          break;\n\n        case "quarter note":\n          shouldSendBeat = this.clock % 24 === 0;\n          break;\n\n        case "bar":\n          shouldSendBeat = this.clock % 96 === 0;\n          break;\n\n        case "4 bars":\n          shouldSendBeat = this.clock === 0;\n          break;\n      }\n\n      if (shouldSendBeat) this.send("clock", data);\n      this.clock = (this.clock + 1) % 384; //24ppqn * 4 quarter notes * 4 bars\n    } // Channel messages:\n\n\n    if (channel === 0 || channel === (data[0] & 0x0f) + 1) {\n      let type = data[0] >> 4;\n\n      if (type === 0x9 && data[2] === 0 && transformNoteOnVelocityZeroAsNoteOff) {\n        type = 0x8;\n      }\n\n      if (type === 0x9 && allowNoteOn) return this.send("note-on", data);\n      if (type === 0x8 && allowNoteOff) return this.send("note-off", data);\n      if (type === 0xb && allowCC) return this.send("cc", data);\n    }\n  }\n\n  onMIDISuccess(midiAccess) {\n    this.inputs = midiAccess.inputs;\n    let select = this.root.getElementById("select");\n    let option = document.createElement("option");\n    option.innerText = "Select device...";\n    option.value = "";\n    select.appendChild(option);\n\n    for (let input of this.inputs.values()) {\n      option = document.createElement("option");\n      option.innerText = input.manufacturer + " " + input.name;\n      option.value = input.id;\n      select.appendChild(option);\n    }\n\n    select.addEventListener("change", event => {\n      this.setAttribute("device-id", event.target.value);\n    }); // Force listener to listen:\n\n    this.setInput(this.getAttribute("device-id"));\n  }\n\n  onMIDIFailure() {\n    alert("Unable to obtain MIDI access!");\n  }\n\n  onReady() {\n    this.boundOnMIDIMessage = this.onMIDIMessage.bind(this);\n    navigator.requestMIDIAccess().then(this.onMIDISuccess.bind(this), this.onMIDIFailure.bind(this));\n  }\n\n  onDestroy() {\n    this.removeMIDIListeners();\n  }\n\n}',
+				templateHTML: '<div>\n\t<select id="select"></select>\n</div>',
+				templateCSS: null,
+				transforms: {}
+			}
+		},
+		chainPool: { nodeIdToChainId: {}, nextChainId: 0, pool: {} }
+	}
 }

@@ -15,24 +15,26 @@ export default class SlideContent extends Component {
 	static get steps() {
 		return [
 			'start',
-			'strike',
 			'problem-1',
 			'solution-1',
 			'problem-2',
 			'solution-2',
 			'problem-3',
-			'solution-3'
+			'solution-3',
+			'problem-4',
+			'solution-4',
+			'problem-5',
+			'solution-5',
+			'solution-5b',
+			'overview'
 		]
 	}
 
 	render() {
 		return (
 			<div className="scroller">
-				<h1>
-					<span className="hide ha">Problems</span>{' '}
-					<span className="hide hb">💖 Opportunties for success! 🦄</span>
-				</h1>
-				<ol>
+				<h1>Problems</h1>
+				<ul>
 					<li className="hide item-1">
 						<div>
 							React updates trigger <code>connectedCallback</code> and{' '}
@@ -55,7 +57,9 @@ export default class SlideContent extends Component {
 						</div>
 					</li>
 					<li className="hide item-3">
-						<div>`getAttribute` always returns strings since attributes are strings.</div>
+						<div>
+							<code>getAttribute</code> always returns strings since attributes are strings.
+						</div>
 						<div className="hide solution-3">
 							<span>
 								Solution: Make your own <code>getAttribute</code>!
@@ -76,7 +80,38 @@ export default class SlideContent extends Component {
 							/>
 						</div>
 					</li>
-				</ol>
+					<li className="hide item-4">
+						<div>
+							Can't catch errors from <code>attributeChangedCallback</code>.
+						</div>
+						<div className="hide solution-4">
+							<span>
+								Solution: Make your own <code>attributeChangedCallback</code>!
+							</span>
+							<Code
+								lang="javascript"
+								text={`//...
+attributeChangedCallback(attrName, oldValue, newValue) {
+	try {
+		this.onAttrChanged(attrName, oldValue, newValue);
+	} catch (e) {
+		Events.emit("app:error", e.message);
+	}
+}
+// ...`}
+							/>
+						</div>
+					</li>
+					<li className="hide item-5">
+						<div>Performance</div>
+						<div className="hide solution-5">
+							<span className="shrug">¯\_(ツ)_/¯</span>{' '}
+							<span className="actually">
+								Use React's <code>shouldComponentUpdate</code>
+							</span>
+						</div>
+					</li>
+				</ul>
 			</div>
 		)
 	}

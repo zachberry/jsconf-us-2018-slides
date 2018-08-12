@@ -8,7 +8,7 @@ class VidKid extends Component {
 			<iframe
 				className="vid-kid"
 				allow="camera; microphone; midi"
-				src={'http://localhost:3002/#' + btoa(JSON.stringify(this.props.doc))}
+				src={this.props.url + '/#' + btoa(JSON.stringify(this.props.doc))}
 			/>
 		)
 	}

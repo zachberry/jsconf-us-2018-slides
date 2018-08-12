@@ -1020,25 +1020,7 @@ a:visited {
 .slide.web-component-problems .scroller {
 	transition: transform 1s;
 	transform: translate(0, 0);
-}
-.slide.web-component-problems.did-step-start .ha {
-	visibility: visible;
-}
-.slide.web-component-problems.did-step-strike .ha {
-	text-decoration: line-through;
-}
-.slide.web-component-problems.did-step-strike .hb {
-	visibility: visible;
-	transform: rotate(-3deg);
-	display: inline-block;
-	background: gold;
-	color: brown;
-	padding: 0.3em;
-	font-size: 0.6em;
-	border-radius: 0.25em;
-	position: absolute;
-	left: 8.8em;
-	top: -0.35em;
+	transform-origin: top center;
 }
 .slide.web-component-problems.did-step-problem-1 .item-1 {
 	visibility: visible;
@@ -1053,12 +1035,61 @@ a:visited {
 	visibility: visible;
 }
 .slide.web-component-problems.did-step-problem-3 .scroller {
-	transform: translate(0, -59.7%);
+	transform: translate(0, -16.4em);
 }
 .slide.web-component-problems.did-step-problem-3 .item-3 {
 	visibility: visible;
 }
 .slide.web-component-problems.did-step-solution-3 .solution-3 {
+	visibility: visible;
+}
+.slide.web-component-problems.did-step-problem-4 .scroller {
+	transform: translate(0, -35.8em);
+}
+.slide.web-component-problems.did-step-problem-4 .item-4 {
+	visibility: visible;
+}
+.slide.web-component-problems.did-step-solution-4 .solution-4 {
+	visibility: visible;
+}
+.slide.web-component-problems.did-step-problem-5 .item-5 {
+	visibility: visible;
+}
+.slide.web-component-problems.did-step-solution-5 .solution-5 {
+	visibility: visible;
+}
+.slide.web-component-problems .actually {
+	visibility: hidden;
+}
+.slide.web-component-problems.did-step-solution-5b .shrug {
+	text-decoration: line-through;
+}
+.slide.web-component-problems.did-step-solution-5b .actually {
+	visibility: visible;
+}
+.slide.web-component-problems.did-step-overview .scroller {
+	transform: translate(0, 0) scale(0.35);
+}
+
+.slide.what-would-i-change .hide {
+	visibility: hidden;
+}
+.slide.what-would-i-change.did-step-1 .item-1,
+.slide.what-would-i-change.did-step-2 .item-2,
+.slide.what-would-i-change.did-step-3 .item-3,
+.slide.what-would-i-change.did-step-4 .item-4,
+.slide.what-would-i-change.did-step-5 .item-5 {
+	visibility: visible;
+}
+
+.slide.final-lessons .hide {
+	visibility: hidden;
+}
+.slide.final-lessons.did-step-1 .item-1,
+.slide.final-lessons.did-step-2 .item-2,
+.slide.final-lessons.did-step-3 .item-3,
+.slide.final-lessons.did-step-4 .item-4,
+.slide.final-lessons.did-step-5 .item-5 {
 	visibility: visible;
 }
 
@@ -1124,7 +1155,134 @@ a:visited {
 	filter: brightness(50%);
 }
 
+.slide.vid-kid-screenshot {
+	background: black;
+}
+.slide.vid-kid-screenshot .content {
+	padding: 0;
+	text-align: center;
+}
+.slide.vid-kid-screenshot .box {
+	position: absolute;
+	left: 37em;
+	top: 4.7em;
+	width: 8.2em;
+	height: 5.7em;
+	font-size: 0.7em;
+	border: 6px solid #eb4500;
+	visibility: hidden;
+	transition: left 0.2s, top 0.2s, width 0.2s, height 0.2s;
+}
+.slide.vid-kid-screenshot .box-2b,
+.slide.vid-kid-screenshot .box-2c {
+	opacity: 0.5;
+}
+.slide.vid-kid-screenshot.did-step-1 .box {
+	visibility: visible;
+}
+
+.slide.vid-kid-screenshot.did-step-2 .box {
+	left: 19.9em;
+	top: 10.1em;
+	width: 8.1em;
+	height: 13.5em;
+}
+.slide.vid-kid-screenshot.did-step-2 .box-2b {
+	left: 8.9em;
+	top: 8.2em;
+	width: 8.1em;
+	height: 8.9em;
+}
+.slide.vid-kid-screenshot.did-step-2 .box-2c {
+	left: 29.7em;
+	top: 12.8em;
+	width: 8.1em;
+	height: 7.1em;
+}
+
+.slide.vid-kid-screenshot.did-step-3 .box {
+	left: 19.9em;
+	top: 10.9em;
+	width: 5.1em;
+	height: 6.2em;
+}
+
+.slide.vid-kid-screenshot.did-step-4 .box {
+	left: 25.2em;
+	top: 10.9em;
+	width: 2.8em;
+	height: 6.2em;
+}
+
+.slide.vid-kid-screenshot.did-step-5 .box {
+	left: 19.9em;
+	top: 17.3em;
+	width: 8.1em;
+	height: 6.3em;
+}
+
+.slide.vid-kid-screenshot.did-step-6 .box {
+	left: 19.9em;
+	top: 14.1em;
+	width: 5.1em;
+	height: 1.5em;
+}
+
+.slide.vid-kid-screenshot.did-step-7 .box {
+	left: 27.3em;
+	top: 10.9em;
+	width: 3em;
+	height: 8em;
+}
+.slide.vid-kid-screenshot.did-step-7 .box-2b {
+	left: 16.5em;
+	top: 9.2em;
+	width: 4em;
+	height: 3em;
+	opacity: 1;
+}
+
+.slide.vid-kid-explainer {
+	background: black;
+}
+.slide.vid-kid-explainer svg {
+	margin-top: 0.5em;
+}
+.slide.vid-kid-explainer .content {
+	padding: 0;
+	text-align: center;
+}
+.slide.vid-kid-explainer .step {
+	visibility: hidden;
+}
+.slide.vid-kid-explainer.did-step-1 .node-js,
+.slide.vid-kid-explainer.did-step-2 .node-js-bits,
+.slide.vid-kid-explainer.did-step-3 .to-eval-arrow,
+.slide.vid-kid-explainer.did-step-4 .eval,
+.slide.vid-kid-explainer.did-step-5 .to-my-node-arrow,
+.slide.vid-kid-explainer.did-step-6 .my-node,
+.slide.vid-kid-explainer.did-step-7 .node-css,
+.slide.vid-kid-explainer.did-step-8 .node-html,
+.slide.vid-kid-explainer.did-step-9 .to-shadow-root-arrow,
+.slide.vid-kid-explainer.did-step-10 .shadow-root,
+.slide.vid-kid-explainer.did-step-11 .to-web-component-arrow,
+.slide.vid-kid-explainer.did-step-12 .web-component,
+.slide.vid-kid-explainer.did-step-13 .react-bg,
+.slide.vid-kid-explainer.did-step-14 .react-nodes,
+.slide.vid-kid-explainer.did-step-15 .state,
+.slide.vid-kid-explainer.did-step-16 .screen-bg,
+.slide.vid-kid-explainer.did-step-17 .screen-html,
+.slide.vid-kid-explainer.did-step-18 .screen-css,
+.slide.vid-kid-explainer.did-step-19 .screen-arrow,
+.slide.vid-kid-explainer.did-step-20 .iframe {
+	visibility: visible;
+}
+
 /* common classes: */
+
+.slide.demo {
+	background: black;
+}
 
 .slide.demo .content {
 	transform: none !important;

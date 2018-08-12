@@ -3,7 +3,7 @@ import './slide-show.css'
 import React, { Component } from 'react'
 
 import NullSlide from '../slides/null-slide'
-import Slide from '../components/slide'
+import Slide from './slide'
 
 const SLIDE_TRANSITION_MS = 500
 
@@ -44,8 +44,6 @@ class SlideShow extends Component {
 	}
 
 	updateSlide(currentSlideIndex, currentStepIndex) {
-		console.log('updateSlide from', this.state.currentSlideIndex, 'to', currentSlideIndex)
-
 		if (currentSlideIndex < this.state.currentSlideIndex) {
 			this.setState({ movement: 'left' })
 			setTimeout(this.moveToSlide.bind(this), SLIDE_TRANSITION_MS)
@@ -110,6 +108,7 @@ class SlideShow extends Component {
 								key={PrevSlide.name}
 								isCurrentSlide={false}
 								sf={this.props.sf}
+								vidKidURL={this.props.vidKidURL}
 								content={PrevSlide}
 								currentStep={prevSlideData ? prevSlideData.step : null}
 								steps={prevSlideData ? prevSlideData.steps : []}
@@ -125,6 +124,7 @@ class SlideShow extends Component {
 								currentSlideData.steps.indexOf(currentSlideData.step) + 1
 							)}
 							sf={this.props.sf}
+							vidKidURL={this.props.vidKidURL}
 							content={CurrentSlide}
 						/>,
 						NextSlide ? (
@@ -132,6 +132,7 @@ class SlideShow extends Component {
 								key={NextSlide.name}
 								isCurrentSlide={false}
 								sf={this.props.sf}
+								vidKidURL={this.props.vidKidURL}
 								content={NextSlide}
 								currentStep={nextSlideData ? nextSlideData.step : null}
 								steps={

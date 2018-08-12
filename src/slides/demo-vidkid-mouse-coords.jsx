@@ -3,11 +3,11 @@ import './slides.css'
 import React, { Component, Fragment } from 'react'
 
 import VidKid from '../components/vid-kid'
-import drumsSvg from '../vid-kid-docs/drums-svg'
+import doc from '../vid-kid-docs/mouse-coords'
 
 export default class SlideContent extends Component {
 	static get name() {
-		return 'demo-1'
+		return 'demo-vidkid-mouse-coords'
 	}
 
 	static get classes() {
@@ -19,9 +19,11 @@ export default class SlideContent extends Component {
 	}
 
 	render() {
+		if (!this.props.isCurrentSlide) return null
+
 		return (
 			<Fragment>
-				<VidKid doc={drumsSvg} />
+				<VidKid url={this.props.vidKidURL} doc={doc} />
 			</Fragment>
 		)
 	}

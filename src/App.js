@@ -12,6 +12,7 @@ import * as C from './config'
 const KEYCODE_LEFT_ARROW = 37
 const KEYCODE_RIGHT_ARROW = 39
 const KEYCODE_SPACE = 13
+const KEYCODE_TILDE = 192
 
 class App extends Component {
 	constructor(props) {
@@ -54,7 +55,10 @@ class App extends Component {
 			currentSlideIndex: indexFromHash.slide,
 			currentStepIndex: indexFromHash.step,
 			// currentSlideIndex: 0,
-			sf: 1
+			sf: 1,
+			vidKidURL: window.localStorage.vidKidURL
+				? window.localStorage.vidKidURL
+				: 'https://vidkid.app'
 		}
 	}
 
@@ -105,6 +109,12 @@ class App extends Component {
 		window.localStorage.webcamExpanded = newValue
 	}
 
+	promptSettings() {
+		let vidKidURL = prompt('VidKid URL?')
+		window.localStorage.vidKidURL = vidKidURL
+		this.setState({ vidKidURL })
+	}
+
 	onKeyUp(event) {
 		switch (event.keyCode) {
 			case KEYCODE_LEFT_ARROW:
@@ -114,6 +124,10 @@ class App extends Component {
 			case KEYCODE_RIGHT_ARROW:
 			case KEYCODE_SPACE:
 				this.gotoNextItem()
+				break
+
+			case KEYCODE_TILDE:
+				this.promptSettings()
 				break
 		}
 	}
@@ -198,6 +212,7 @@ class App extends Component {
 					currentStepIndex={this.state.currentStepIndex}
 					slides={slides}
 					steps={this.allSteps}
+					vidKidURL={this.state.vidKidURL}
 				/>
 				<SlideShowControls goPrev={this.boundOnClickPrev} goNext={this.boundOnClickNext} />
 				<WebcamPanel
