@@ -1,0 +1,3 @@
+[submodule "public/album-art-generator"]
+	path = public/album-art-generator
+	url = https://github.com/zachberry/album-art-generator.git
