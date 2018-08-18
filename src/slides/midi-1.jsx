@@ -29,10 +29,6 @@ export default class SlideContent extends Component {
 			'language-akai',
 			'sad',
 			'midi',
-			'midi-boss',
-			'midi-synth',
-			'midi-akai',
-			'connected',
 			'dance'
 		]
 	}

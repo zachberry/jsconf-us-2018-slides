@@ -12,3 +12,7 @@
 	color: white !important;
 	white-space: pre-wrap;
 }
+
+/* .code > pre > code {
+	font-family: Fira Code;
+} */

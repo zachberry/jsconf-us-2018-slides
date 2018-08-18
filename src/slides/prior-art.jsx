@@ -19,7 +19,6 @@ export default class SlideContent extends Component {
 					<li>Pure Data</li>
 					<li>Touch Designer</li>
 					<li>Others?</li>
-					<li>Did you make one? Oh, you did? It's super active on github? Wow. That's cool.</li>
 				</ul>
 			</Fragment>
 		)

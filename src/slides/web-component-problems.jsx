@@ -105,7 +105,7 @@ attributeChangedCallback(attrName, oldValue, newValue) {
 					<li className="hide item-5">
 						<div>Performance</div>
 						<div className="hide solution-5">
-							<span className="shrug">¯\_(ツ)_/¯</span>{' '}
+							<span className="shrug">Get a faster computer</span>{' '}
 							<span className="actually">
 								Use React's <code>shouldComponentUpdate</code>
 							</span>

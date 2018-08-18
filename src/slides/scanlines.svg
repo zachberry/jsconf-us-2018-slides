@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="16" height="32" viewBox="0 0 16 32">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0;
+      }
+    </style>
+  </defs>
+  <title>scanlines</title>
+  <rect width="16" height="16"/>
+  <g class="cls-1">
+    <rect y="16" width="16" height="16"/>
+  </g>
+</svg>

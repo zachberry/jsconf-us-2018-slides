@@ -92,7 +92,9 @@ a:visited {
 
 .slide.inspiration,
 .slide.wrong,
-.slide.not-original {
+.slide.not-original,
+.slide.css-drum-machines,
+.slide.video-intro {
 	background: url('./sourcream.gif');
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -100,11 +102,20 @@ a:visited {
 }
 .slide.inspiration h1,
 .slide.wrong h1,
-.slide.not-original {
+.slide.not-original,
+.slide.css-drum-machines,
+.slide.video-intro {
 	font-size: 3.5em;
 	text-transform: uppercase;
 	-webkit-text-stroke: 2px black;
 	text-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.slide.video-intro .kerning {
+	padding-left: 0.05em;
+}
+.slide.video-intro .kerning-2 {
+	margin-left: -0.1em;
 }
 
 .slide.break-stuff pre {
@@ -989,19 +1000,6 @@ a:visited {
 	opacity: 1;
 }
 
-.slide.midi-4 li {
-	visibility: hidden;
-}
-.slide.midi-4.did-step-2 .msg-2,
-.slide.midi-4.did-step-3 .msg-3,
-.slide.midi-4.did-step-4 .msg-4,
-.slide.midi-4.did-step-5 .msg-5,
-.slide.midi-4.did-step-6 .msg-6,
-.slide.midi-4.did-step-7 .msg-7,
-.slide.midi-4.did-step-8 .msg-8 {
-	visibility: visible;
-}
-
 .slide.web-component-2 .code {
 	visibility: hidden;
 }
@@ -1242,6 +1240,536 @@ a:visited {
 	opacity: 1;
 }
 
+.slide.idea-graphic {
+	background: #272727;
+}
+.slide.idea-graphic .wrapper {
+	transform: scale(0.9);
+	transform-origin: left center;
+}
+.slide.idea-graphic .hide {
+	position: absolute;
+	background: #272727;
+	height: 2em;
+}
+.slide.idea-graphic .hide-webmidi {
+	top: 10.6em;
+	left: 27.4em;
+	width: 7em;
+}
+.slide.idea-graphic .hide-gamepad {
+	top: 5.2em;
+	left: 16em;
+	width: 8em;
+}
+.slide.idea-graphic .hide-media {
+	top: 14.9em;
+	left: 10em;
+	width: 15.4em;
+}
+.slide.idea-graphic .hide-dom {
+	top: 10em;
+	left: 19em;
+	width: 7.4em;
+}
+.slide.idea-graphic .content {
+	padding: 0;
+	overflow: visible;
+}
+.slide.idea-graphic img,
+.slide.idea-graphic svg {
+	position: absolute;
+}
+.slide.idea-graphic .bg {
+	left: 0;
+	top: 0;
+	height: 100%;
+}
+.slide.idea-graphic .wires {
+	transform: scale(1.92);
+	left: 10.61em;
+	top: 5.43em;
+}
+.slide.idea-graphic .mouse-outline {
+	left: 16.139em;
+	top: 8.6em;
+	transform: scale(2);
+}
+.slide.idea-graphic .mouse {
+	left: 16.24em;
+	top: 8.7em;
+	transform: scale(2);
+}
+.slide.idea-graphic .gamepad-outline {
+	transform: scale(1.9);
+	left: 7.7em;
+	top: 4.3em;
+}
+.slide.idea-graphic .gamepad {
+	transform: scale(1.9);
+	left: 7.775em;
+	top: 4.36em;
+}
+.slide.idea-graphic .media-outline {
+	transform: scale(1.92);
+	left: 2.65em;
+	top: 10.84em;
+}
+.slide.idea-graphic .media {
+	transform: scale(1.92);
+	left: 2.6em;
+	top: 10.9em;
+}
+.slide.idea-graphic .drum-outline {
+	transform: scale(1.92);
+	left: 15.95em;
+	top: 16.94em;
+}
+.slide.idea-graphic .drum {
+	transform: scale(1.92);
+	left: 16.01em;
+	top: 17.03em;
+}
+.slide.idea-graphic .bubble {
+	position: absolute;
+	color: #eb4600;
+	font-family: 'Source Code Pro';
+	font-size: 1em;
+	width: 3em;
+	height: 3em;
+}
+.slide.idea-graphic .bubble img {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.slide.idea-graphic .bubble span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 0.6em;
+	width: 80%;
+	white-space: nowrap;
+}
+.slide.idea-graphic h1 {
+	position: absolute;
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+	transition: transform 0.2s;
+}
+.slide.idea-graphic .webmidi-api {
+	left: 27.5em;
+	top: 12.7em;
+	color: #940099;
+	transform: translate(0, -100%);
+}
+.slide.idea-graphic .media-api {
+	left: 11.5em;
+	top: 13.7em;
+	color: #008cff;
+	transform: translate(0, 100%);
+}
+.slide.idea-graphic .dom-events {
+	left: 19.5em;
+	top: 8.9em;
+	color: #f4d550;
+	transform: translate(0, 100%);
+}
+.slide.idea-graphic .gamepad-api {
+	left: 16.3em;
+	top: 4.1em;
+	color: #ea4600;
+	transform: translate(0, 100%);
+}
+.slide.idea-graphic .mouse-bubble {
+	left: 18.9em;
+	top: 5.8em;
+}
+.slide.idea-graphic .drum-bubble {
+	left: 23.2em;
+	top: 15.2em;
+	text-align: center;
+}
+.slide.idea-graphic .gamepad-bubble {
+	left: 13.4em;
+	top: 1.7em;
+}
+.slide.idea-graphic .media-bubble {
+	left: 8.7em;
+	top: 9.8em;
+}
+.slide.idea-graphic.did-step-show-h1s h1 {
+	transform: none;
+}
+.slide.idea-graphic polyline {
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 11px;
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+}
+@keyframes idea-graphic-dash {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+.slide.idea-graphic.did-step-wires polyline {
+	animation: idea-graphic-dash 1s linear;
+	animation-fill-mode: forwards;
+	animation-delay: 0.1s;
+}
+.slide.idea-graphic svg .cls-3 {
+	stroke: #008cff;
+}
+.slide.idea-graphic svg .cls-4 {
+	stroke: #f4d451;
+}
+.slide.idea-graphic svg .cls-5 {
+	stroke: #950099;
+}
+.slide.idea-graphic svg .cls-6 {
+	stroke: #ea4600;
+}
+.slide.idea-graphic.wires polyline {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+}
+.slide.idea-graphic .device {
+	transition: transform 0.2s;
+}
+.slide.idea-graphic .drum {
+	transform: scale(1.92) translate(0, 4em);
+	transition-delay: 0.2s;
+}
+.slide.idea-graphic .media {
+	transform: scale(1.92) translate(-6em);
+}
+.slide.idea-graphic .gamepad {
+	transform: scale(1.9) translate(0, -4em);
+	transition-delay: 0.4s;
+}
+.slide.idea-graphic .mouse {
+	transform: scale(2) translate(0, -7em);
+	transition-delay: 0.6s;
+}
+.slide.idea-graphic.did-step-devices .drum {
+	transform: scale(1.92);
+}
+.slide.idea-graphic.did-step-devices .media {
+	transform: scale(1.92);
+}
+.slide.idea-graphic.did-step-devices .gamepad {
+	transform: scale(1.9);
+}
+.slide.idea-graphic.did-step-devices .mouse {
+	transform: scale(2);
+}
+.slide.idea-graphic .hide-outline {
+	position: absolute;
+	transition: transform 0.2s;
+	background: #272727;
+}
+.slide.idea-graphic.did-step-wires .hide-outline {
+	transform: translate(100%, 0);
+}
+.slide.idea-graphic .hide-mouse-outline {
+	left: 15.2em;
+	top: 7em;
+	width: 3.6em;
+	height: 6em;
+}
+.slide.idea-graphic .hide-gamepad-outline {
+	left: 5.8em;
+	top: 3em;
+	width: 7.8em;
+	height: 4em;
+}
+.slide.idea-graphic .hide-media-outline {
+	left: 0;
+	top: 8em;
+	width: 11.3em;
+	height: 10em;
+}
+.slide.idea-graphic .hide-drum-outline {
+	left: 13.6em;
+	top: 15em;
+	width: 9.5em;
+	height: 7em;
+}
+.slide.idea-graphic .bubble {
+	transform: translate(-114%, 114%);
+	transition: transform 0.2s, opacity 0.2s;
+	opacity: 0;
+}
+.slide.idea-graphic.did-step-speak .bubble {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+.slide.idea-graphic.did-step-speak .drum-bubble {
+	transition-delay: 0.2s;
+}
+.slide.idea-graphic.did-step-speak .gamepad-bubble {
+	transition-delay: 0.4s;
+}
+.slide.idea-graphic.did-step-speak .mouse-bubble {
+	transition-delay: 0.6s;
+}
+.slide.idea-graphic.did-step-show-h1s .hide-outline {
+	display: none;
+}
+/* .slide.idea-graphic.did-step-hide-bubble .bubble {
+	transform: translate(114, 114%);
+	opacity: 0;
+} */
+.slide.idea-graphic .circle {
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	border-radius: 1em;
+	display: none;
+}
+.slide.idea-graphic.did-step-circles .circle {
+	display: block;
+}
+@keyframes idea-graphic-circle-mouse {
+	45% {
+		top: 9.5em;
+		left: 26.4em;
+	}
+	50% {
+		left: 26.4em;
+		top: 10.25em;
+	}
+	100% {
+		left: 36.1em;
+		top: 10.25em;
+	}
+}
+.slide.idea-graphic .circle-mouse {
+	background: #f4d451;
+	top: 9.5em;
+	left: 17.6em;
+	animation: idea-graphic-circle-mouse 0.5s infinite linear;
+}
+@keyframes idea-graphic-circle-gamepad {
+	60% {
+		top: 4.7em;
+		left: 27.2em;
+	}
+	70% {
+		top: 9.34em;
+		left: 27.2em;
+	}
+	100% {
+		top: 9.34em;
+		left: 36.2em;
+	}
+}
+.slide.idea-graphic .circle-gamepad {
+	background: #ea4600;
+	top: 4.7em;
+	left: 12.4em;
+	animation: idea-graphic-circle-gamepad 0.6s infinite linear;
+}
+@keyframes idea-graphic-circle-media {
+	60% {
+		top: 14.3em;
+		left: 25.54em;
+	}
+	70% {
+		top: 11.2em;
+		left: 25.54em;
+	}
+	100% {
+		top: 11.2em;
+		left: 36.14em;
+	}
+}
+.slide.idea-graphic .circle-media {
+	background: #008cff;
+	top: 14.3em;
+	left: 9.9em;
+	animation: idea-graphic-circle-media 0.7s infinite linear;
+}
+@keyframes idea-graphic-circle-drum {
+	30% {
+		top: 18.15em;
+		left: 26.4em;
+	}
+	60% {
+		top: 12.14em;
+		left: 26.4em;
+	}
+	100% {
+		top: 12.14em;
+		left: 36.1em;
+	}
+}
+.slide.idea-graphic .circle-drum {
+	background: #950099;
+	top: 18.15em;
+	left: 22em;
+	animation: idea-graphic-circle-drum 0.6s infinite linear;
+}
+
+.slide.idea-graphic-2 {
+	background: #272727;
+}
+.slide.idea-graphic-2 .content {
+	padding: 0;
+	overflow: visible;
+}
+.slide.idea-graphic-2 img,
+.slide.idea-graphic-2 svg,
+.slide.idea-graphic-2 .circle {
+	position: absolute;
+}
+.slide.idea-graphic-2 .wrapper {
+	transform: scale(0.9) translate(-1.3em, -1.25em);
+	transform-origin: left center;
+	height: 100%;
+	transition: transform 1s;
+}
+.slide.idea-graphic-2.did-step-zoom .wrapper {
+	transform: scale(3) translate(-28.7em, -7em);
+}
+.slide.idea-graphic-2 .bg {
+	left: 0;
+	top: 0;
+	height: 100%;
+}
+.slide.idea-graphic-2 .wires {
+	transform: scale(1.93);
+	left: 0;
+	top: 0;
+	transform-origin: top left;
+}
+.slide.idea-graphic-2 .wires .cls-1 {
+	opacity: 0;
+}
+
+.slide.idea-graphic-2 .wires .cls-2 {
+	fill: #141414;
+}
+
+.slide.idea-graphic-2 .wires .cls-3,
+.slide.idea-graphic-2 .wires .cls-4,
+.slide.idea-graphic-2 .wires .cls-5,
+.slide.idea-graphic-2 .wires .cls-6 {
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 11px;
+}
+
+.slide.idea-graphic-2 .wires .cls-3 {
+	stroke: #008cff;
+}
+
+.slide.idea-graphic-2 .wires .cls-4 {
+	stroke: #f4d451;
+}
+
+.slide.idea-graphic-2 .wires .cls-5 {
+	stroke: #ea4600;
+}
+
+.slide.idea-graphic-2 .wires .cls-6 {
+	stroke: #950099;
+}
+.slide.idea-graphic-2 .wires-internal {
+	transform: scale(1.93) translate(1.5em);
+	left: 0;
+	top: 0;
+	transform-origin: top left;
+}
+.slide.idea-graphic-2 .circle {
+	position: absolute;
+	color: #ea4600;
+	font-family: 'Roboto Mono';
+	font-weight: 200;
+	background: white;
+	font-size: 0.6em;
+	width: 9.7em;
+	border-radius: 9.7em;
+	text-align: center;
+	padding-top: 4.85em;
+	height: 4.85em;
+	line-height: 0;
+}
+.slide.idea-graphic-2 .circle-css {
+	left: 50.6em;
+	top: 6em;
+}
+.slide.idea-graphic-2 .circle-three-js {
+	left: 18.5em;
+	top: 22em;
+}
+.slide.idea-graphic-2 .circle-canvas {
+	left: 36em;
+	top: 19.2em;
+}
+.slide.idea-graphic-2 .circle-video {
+	left: 21.7em;
+	top: 5.2em;
+}
+.slide.idea-graphic-2 .tv {
+	left: 31.55em;
+	top: 15.2em;
+	width: 6em;
+	height: 6em;
+}
+@keyframes idea-graphic-2-tri {
+	0% {
+		filter: hue-rotate(0);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+.slide.idea-graphic-2 .tri {
+	left: 32.55em;
+	top: 16.4em;
+	width: 2.7em;
+	animation: idea-graphic-2-tri 1s infinite linear;
+}
+@keyframes idea-graphic-2-tv-circle {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.slide.idea-graphic-2 .tv-circle {
+	left: 34.4em;
+	top: 16.2em;
+	width: 2em;
+	height: 2em;
+	border-radius: 2em;
+	border: 2px solid #272727;
+	position: absolute;
+	background: #ff2ece;
+	animation: idea-graphic-2-tv-circle 1s infinite;
+}
+.slide.idea-graphic-2 .scanlines {
+	left: 31.65em;
+	top: 15.3em;
+	width: 5.8em;
+	height: 5.8em;
+	position: absolute;
+	background-size: 2.5px;
+	opacity: 0.5;
+	background-image: url('./scanlines.svg');
+}
+
 .slide.vid-kid-explainer {
 	background: black;
 }
@@ -1278,24 +1806,47 @@ a:visited {
 	visibility: visible;
 }
 
-/* common classes: */
-
-.slide.demo {
-	background: black;
+.slide.video .slider {
+	transition: transform 1s;
+	transition-delay: 0.1s;
+	transform: scale(0.465);
+	transform-origin: top center;
+}
+.slide.video.did-step-2 .slider {
+	transform: scale(1);
+}
+.slide.video.did-step-4 .slider {
+	transform: translate(0, -8em);
+}
+.slide.video.did-step-9 .slider {
+	transform: translate(0, -22em);
+}
+.slide.video.did-step-16 .slider {
+	transform: scale(0.465);
+}
+.slide.video a {
+	font-size: 3em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transition: transform 0.2s;
+	transform: translate(-50%, -50%) translate(0, 10em);
+	width: 10em;
+	padding: 0.5em 1em;
+}
+.slide.video.did-step-17 a {
+	transform: translate(-50%, -50%);
+}
+.slide.video .code {
+	transition: filter 1s;
+}
+.slide.video.did-step-17 .code {
+	filter: blur(6px);
 }
 
-.slide.demo .content {
-	transform: none !important;
-	top: 0;
-	left: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-}
-.slide.demo iframe {
-	width: 100vw;
-	height: 100vh;
-	border: none;
+.slide.github li {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
 }
 
 .slide.eval-how-to h1 {
@@ -1325,4 +1876,41 @@ a:visited {
 
 .slide.prior-art ul {
 	margin-top: 3em;
+}
+
+/* common classes: */
+
+.slide.demo {
+	background: black;
+}
+
+.slide.demo .content {
+	transform: none !important;
+	top: 0;
+	left: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.slide.demo iframe {
+	width: 100vw;
+	height: 100vh;
+	border: none;
+}
+
+.bitly {
+	font-size: 3em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transition: transform 0.2s;
+	transform: translate(-50%, -50%) translate(0, 10em);
+	width: 10em;
+	padding: 0.5em 1em;
+}
+.slide.did-step-bitly .bitly {
+	transform: translate(-50%, -50%);
+}
+.slide.did-step-bitly .code {
+	filter: brightness(20%);
 }

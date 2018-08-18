@@ -1,0 +1,47 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="1215.3333" height="621.9688" viewBox="0 0 1215.3333 621.9688">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #141414;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 11px;
+      }
+
+      .cls-3 {
+        stroke: #008cff;
+      }
+
+      .cls-4 {
+        stroke: #f4d451;
+      }
+
+      .cls-5 {
+        stroke: #950099;
+      }
+
+      .cls-6 {
+        stroke: #ea4600;
+      }
+    </style>
+  </defs>
+  <title>vid-kid-modular-output-wires</title>
+  <g class="cls-1">
+    <rect class="cls-2" x="0.345" y="0.3458" width="994.459" height="621.2769"/>
+    <path d="M994.459.6911V621.2776H.6911V.6911H994.459M995.15,0H0V621.9688H995.15V0Z"/>
+  </g>
+  <polyline class="cls-3" points="259.833 409.105 720.086 409.105 720.086 323.105 1208.833 323.105"/>
+  <polyline class="cls-4" points="470.333 275.605 744.833 275.605 744.833 296.605 1207.333 296.605"/>
+  <polyline class="cls-5" points="571.833 515.105 744.833 515.105 744.833 349.105 1209.833 349.105"/>
+  <polyline class="cls-6" points="340.833 142.105 767.333 142.105 767.333 272.105 1209.833 272.105"/>
+  <path class="cls-3" d="M720.0859,430.605"/>
+  <path class="cls-3" d="M720.0859,323.105"/>
+</svg>

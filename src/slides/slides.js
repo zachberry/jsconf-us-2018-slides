@@ -1,12 +1,14 @@
 export default [
 	require('./intro').default,
-	require('./demo-vidkid-bouncing-circles').default,
-	require('./demo-vidkid-drums-svg').default,
-	require('./demo-vidkid-lazer-notes').default,
-	require('./demo-vidkid-3d-cam').default,
+	require('./idea-graphic').default,
+	require('./idea-graphic-2').default,
+	require('./gamepad').default,
+	require('./video-simple').default,
+	require('./video').default,
+	require('./canvas').default,
+
 	require('./wrong').default,
 	require('./me').default,
-	require('./demo-thank-you').default,
 	require('./me-pic').default,
 	require('./inspiration').default,
 	require('./break-stuff').default,
@@ -25,35 +27,44 @@ export default [
 	require('./digital-vis-black').default,
 	require('./web-apis').default,
 	require('./original-idea').default,
+	require('./not-original').default,
+	require('./prior-art').default,
 	require('./demo-vidkid-mouse-coords').default,
 
-	require('./node-api').default,
 	require('./vid-kid-screenshot').default,
+
 	require('./vid-kid-explainer').default,
 	require('./web-component').default,
 	require('./web-component-2').default,
-	require('./web-component-problems').default,
-	require('./what-would-i-change').default,
-	require('./final-lessons').default,
-	require('./my-web-component').default,
-	// Begin unsure zone:
+	require('./write-to-iframe').default,
+	require('./eval').default,
+	require('./eval-how-to').default,
+	require('./eval-sandboxing').default,
 
+	require('./css-drum-machines').default,
+	require('./demo-vidkid-bouncing-circles').default,
+	require('./demo-vidkid-drums-svg').default,
 	require('./midi-0').default,
 	require('./midi-1').default,
 	require('./midi-2').default,
 	require('./midi-3').default,
 	require('./midi-4').default,
 	require('./midi-5').default,
+	require('./video-intro').default,
+	require('./demo-vidkid-pixel-cam').default,
+	require('./demo-vidkid-3d-cam').default,
 
-	require('./how-its-made').default,
+	require('./web-component-problems').default,
+	require('./node-api').default,
 
-	require('./write-to-iframe').default,
-	require('./demo-write-to-iframe').default,
+	require('./what-would-i-change').default,
+	require('./demo-vidkid-lazer-notes').default,
+	require('./github').default,
+	require('./demo-thank-you').default
 
-	require('./eval').default,
-	require('./eval-how-to').default,
-	require('./eval-sandboxing').default,
+	// require('./final-lessons').default
+	// require('./my-web-component').default,
+	// Begin unsure zone:
 
-	require('./not-original').default,
-	require('./prior-art').default
+	// require('./how-its-made').default,
 ]

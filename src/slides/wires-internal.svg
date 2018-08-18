@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="995.15" height="621.9688" viewBox="0 0 995.15 621.9688">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #141414;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 11px;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+      }
+
+      .cls-4 {
+        stroke: #950099;
+      }
+    </style>
+  </defs>
+  <title>wires-internal</title>
+  <g id="Layer_3" data-name="Layer 3">
+    <g class="cls-1">
+      <rect class="cls-2" x="0.345" y="0.3458" width="994.459" height="621.2769"/>
+      <path d="M994.459.6911V621.2776H.6911V.6911H994.459M995.15,0H0V621.9688H995.15Z"/>
+    </g>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <polyline class="cls-3" points="597.884 399.816 719.692 399.816 719.692 178.816 840 178.816"/>
+    <polyline class="cls-3" points="359.827 166.484 359.827 259.126 597.827 259.126 597.827 399.814"/>
+    <polyline class="cls-3" points="307.917 445.277 307.917 552.012 695.711 552.012 695.711 502.989 875.711 502.989"/>
+    <polyline class="cls-3" points="875.711 503.348 875.711 336.941 840 336.941 840 178.816"/>
+    <path class="cls-4" d="M49.8211,349.4844"/>
+  </g>
+</svg>
