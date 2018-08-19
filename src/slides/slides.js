@@ -1,7 +1,6 @@
 export default [
 	require('./intro').default,
-	require('./idea-graphic').default,
-	require('./idea-graphic-2').default,
+
 	require('./gamepad').default,
 	require('./video-simple').default,
 	require('./video').default,
@@ -26,6 +25,9 @@ export default [
 	require('./digital-vis-white').default,
 	require('./digital-vis-black').default,
 	require('./web-apis').default,
+	require('./the-big-idea').default,
+	require('./idea-graphic').default,
+	require('./idea-graphic-2').default,
 	require('./original-idea').default,
 	require('./not-original').default,
 	require('./prior-art').default,

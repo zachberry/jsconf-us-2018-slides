@@ -53,7 +53,6 @@ export default class SlideContent extends Component {
 		navigator.requestMIDIAccess().then(this.onMIDISuccess.bind(this), this.onMIDIFailure.bind(this))
 
 		// Gamepads
-		this.gamepads = navigator.getGamepads()
 		this.pollActive = true
 		this.boundPoll = this.poll.bind(this)
 		window.requestAnimationFrame(this.boundPoll)
@@ -62,9 +61,11 @@ export default class SlideContent extends Component {
 	poll() {
 		if (!this.pollActive) return
 
-		if (this.gamepads[0] && this.gamepads[0].axes) {
+		let gamepads = navigator.getGamepads()
+
+		if (gamepads[0] && gamepads[0].axes) {
 			this.setState({
-				axis: this.gamepads[0].axes[0]
+				axis: gamepads[0].axes[0]
 			})
 		}
 
@@ -83,7 +84,10 @@ export default class SlideContent extends Component {
 	}
 
 	onMIDIMessage(event) {
-		let data = Array.from(event.data)
+		let type = event.data[0] >> 4
+		if (type !== 0x9 && type !== 0x8) return
+
+		let data = Array.from(event.data).concat([0, 0, 0])
 		this.setState({
 			midiData: data
 		})
@@ -219,7 +223,7 @@ export default class SlideContent extends Component {
 				</div>
 				<div className="bubble gamepad-bubble">
 					<img src={bubble} />
-					<span>axis-0: 1</span>
+					<span>{this.state.axis}</span>
 				</div>
 				<div className="bubble media-bubble">
 					<img src={bubble} />
