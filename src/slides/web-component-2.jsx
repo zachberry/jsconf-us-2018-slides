@@ -13,24 +13,25 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return ['html', 'define', 'class']
+		return ['class', 'define', 'html']
 	}
 
 	render() {
 		return (
 			<Fragment>
 				<h1>Web Components</h1>
-				<Code className="html" lang="html" text={'<kitty-cat type="tabby">Meow</kitty-cat>'} />
-				<Code
-					className="define"
-					lang="javascript"
-					text={'window.customElements.define("kitty-cat", KittyCat);'}
-				/>
+
 				<Code
 					className="class"
 					lang="javascript"
-					text={'class KittyCat extends HTMLElement { ... }'}
+					text={'class UserIcon extends HTMLElement { ... }'}
 				/>
+				<Code
+					className="define"
+					lang="javascript"
+					text={'window.customElements.define("user-icon", UserIcon);'}
+				/>
+				<Code className="html" lang="html" text={'<user-icon user-id="48521">...</user-icon>'} />
 			</Fragment>
 		)
 	}

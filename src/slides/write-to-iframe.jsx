@@ -25,12 +25,16 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return [1, 2, 3, 4, 5, 'bitly']
+		return [1, 2, 3, 4, 5]
 	}
 
 	render() {
 		return (
 			<Fragment>
+				<h1>Writing to iframes</h1>
+				<a className="bitly" target="_blank" href="http://bit.ly/jsconf-vs">
+					bit.ly/jsconf-vs
+				</a>
 				<Code
 					wrapLines={true}
 					lang="javascript"
@@ -38,9 +42,6 @@ export default class SlideContent extends Component {
 					steps={[[1, 11], [2, 3, 4], [6, 7], [9, 10]]}
 					step={this.props.step}
 				/>
-				<a className="bitly" target="_blank" href="https://codepen.io/zachberry/pen/ZjNYVV">
-					https://codepen.io/zachberry/pen/ZjNYVV
-				</a>
 			</Fragment>
 		)
 	}

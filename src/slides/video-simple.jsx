@@ -24,24 +24,21 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return [1, 2, 3, 4, 5, 6, 'bitly']
+		return [1, 2, 3, 4, 5, 6]
 	}
 
 	render() {
 		return (
 			<Fragment>
+				<h1>Webcam</h1>
 				<Code
 					lang="javascript"
 					text={CODE_TEXT}
 					steps={[null, [1, 2, 14], [3, 4, 9], [5, 6], [7, 8]]}
 					step={this.props.step}
 				/>
-				<a
-					className="bitly"
-					target="_blank"
-					href="https://codepen.io/zachberry/pen/WKBvqq?editors=0010#0"
-				>
-					https://codepen.io/zachberry/pen/WKBvqq?editors=0010#0
+				<a className="bitly" target="_blank" href="http://bit.ly/jsconf-vs">
+					bit.ly/jsconf-vs
 				</a>
 			</Fragment>
 		)

@@ -1,12 +1,9 @@
 export default [
 	require('./intro').default,
 
-	require('./gamepad').default,
-	require('./video-simple').default,
-	require('./video').default,
-	require('./canvas').default,
+	// require('./video').default,
 
-	require('./wrong').default,
+	// require('./wrong').default,
 	require('./me').default,
 	require('./me-pic').default,
 	require('./inspiration').default,
@@ -28,9 +25,8 @@ export default [
 	require('./the-big-idea').default,
 	require('./idea-graphic').default,
 	require('./idea-graphic-2').default,
-	require('./original-idea').default,
-	require('./not-original').default,
-	require('./prior-art').default,
+	// require('./original-idea').default,
+	// require('./not-original').default,
 	require('./demo-vidkid-mouse-coords').default,
 
 	require('./vid-kid-screenshot').default,
@@ -38,10 +34,11 @@ export default [
 	require('./vid-kid-explainer').default,
 	require('./web-component').default,
 	require('./web-component-2').default,
+	require('./code-example').default,
 	require('./write-to-iframe').default,
 	require('./eval').default,
 	require('./eval-how-to').default,
-	require('./eval-sandboxing').default,
+	// require('./eval-sandboxing').default,
 
 	require('./css-drum-machines').default,
 	require('./demo-vidkid-bouncing-circles').default,
@@ -52,11 +49,17 @@ export default [
 	require('./midi-3').default,
 	require('./midi-4').default,
 	require('./midi-5').default,
+	require('./gamepad').default,
+
 	require('./video-intro').default,
 	require('./demo-vidkid-pixel-cam').default,
+	require('./video-simple').default,
+	require('./canvas').default,
 	require('./demo-vidkid-3d-cam').default,
 
 	require('./web-component-problems').default,
+	require('./prior-art').default,
+
 	require('./node-api').default,
 
 	require('./what-would-i-change').default,

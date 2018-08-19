@@ -1,22 +1,9 @@
 import './slides.css'
 
-import ideaGraphic2 from './idea-graphic-2.svg'
-import wires2 from './wires-2.svg'
-import wiresInternal from './wires-internal.svg'
 import tv from './tv.svg'
 import tvFrame from './tv-frame.svg'
 import tri from './tri.svg'
-import mouseOutline from './mouse-outline.svg'
-import mouse from './mouse.svg'
-import gamepadOutline from './gamepad-outline.svg'
-import gamepad from './gamepad.svg'
-import mediaOutline from './media-outline.svg'
-import media from './media.svg'
-import drum from './drum-small.svg'
-import drumOutline from './drum-outline.svg'
-import bubble from './small-bubble.svg'
 
-// import PathSlider from '../path-slider'
 import anime from 'animejs'
 
 import React, { Component, Fragment } from 'react'

@@ -8,21 +8,27 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return [1, 2, 3, 4, 5, 6]
+		return [1, 2, 3, 4]
 	}
 
 	render() {
 		return (
 			<Fragment>
-				<h1>Me</h1>
+				<h1>About me</h1>
 				<ul>
 					<li>Web Developer at UCF</li>
-					<li>Love Javascript</li>
-					<li>Love the Browser</li>
-					<li>Submitted JSConf proposal on the last day</li>
-					<li>Didn't think I'd get picked</li>
 					<li>
-						<span className="highlight">I got picked</span>
+						Love{' '}
+						<div className="js-box">
+							<span>JS</span>
+						</div>{' '}
+						and the browser
+					</li>
+					<li>
+						Submitted JSConf proposal on the last day, <i>really</i> didn't think I'd be picked
+					</li>
+					<li>
+						<span className="highlight">Which is why I submitted this as my photo...</span>
 					</li>
 				</ul>
 			</Fragment>

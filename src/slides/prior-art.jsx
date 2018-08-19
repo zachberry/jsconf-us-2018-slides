@@ -14,6 +14,7 @@ export default class SlideContent extends Component {
 	render() {
 		return (
 			<Fragment>
+				<h1>Prior Art</h1>
 				<ul>
 					<li>Max for Live</li>
 					<li>Pure Data</li>

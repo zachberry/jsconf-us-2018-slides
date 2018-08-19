@@ -17,6 +17,9 @@ export default class SlideContent extends Component {
 		return (
 			<Fragment>
 				<h1>WebMIDI</h1>
+				<a className="bitly" target="_blank" href="http://bit.ly/jsconf-vs">
+					bit.ly/jsconf-vs
+				</a>
 				<Code
 					lang="javascript"
 					step={this.props.step}

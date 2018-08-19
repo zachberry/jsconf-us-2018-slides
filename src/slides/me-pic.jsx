@@ -10,7 +10,7 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return ['start', 'zoom-1', 'zoom-2', 'logo']
+		return ['start', 'zoom-2', 'logo']
 	}
 
 	step(currentStep) {
