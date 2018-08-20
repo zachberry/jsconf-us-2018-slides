@@ -60,9 +60,9 @@ export default [
 	require('./web-component-problems').default,
 	require('./prior-art').default,
 
-	require('./node-api').default,
+	//require('./node-api').default,
 
-	require('./what-would-i-change').default,
+	//require('./what-would-i-change').default,
 	require('./demo-vidkid-lazer-notes').default,
 	require('./github').default,
 	require('./demo-thank-you').default

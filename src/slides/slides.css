@@ -1738,6 +1738,9 @@ a:visited {
 	height: 4.85em;
 	line-height: 0;
 }
+.slide.idea-graphic-2 .circle span {
+	font-size: 1.5em;
+}
 .slide.idea-graphic-2 .circle-css {
 	left: 50.6em;
 	top: 6em;
@@ -1799,13 +1802,13 @@ a:visited {
 }
 @keyframes idea-graphic-2-tri-2 {
 	0% {
-		transform: translate(0, 0);
+		transform: translate(0, 0) skew(-17.5deg);
 	}
 	50% {
-		transform: translate(1em, 0);
+		transform: translate(1em, 0) skew(-17.5deg);
 	}
 	100% {
-		transform: translate(0, 0);
+		transform: translate(0, 0) skew(-17.5deg);
 	}
 }
 .slide.idea-graphic-2.did-step-change-1 .tri {
@@ -1814,6 +1817,9 @@ a:visited {
 .slide.idea-graphic-2.did-step-change-2 .tri {
 	animation: idea-graphic-2-tri-2 1s infinite linear;
 	animation-delay: 1s;
+	transition: filter 1s, transform 1s;
+	transition-delay: 1s;
+	filter: hue-rotate(180deg);
 }
 @keyframes idea-graphic-2-tv-circle-2 {
 	0% {
@@ -1832,6 +1838,9 @@ a:visited {
 .slide.idea-graphic-2.did-step-change-2 .tv-circle {
 	animation: idea-graphic-2-tv-circle-2 1s infinite linear;
 	animation-delay: 1s;
+	transition: filter 1s;
+	transition-delay: 1s;
+	filter: invert(100%);
 }
 .slide.idea-graphic-2 .scanlines,
 .slide.idea-graphic-2 .tv-bg {
@@ -1851,13 +1860,13 @@ a:visited {
 }
 @keyframes idea-graphic-2-tv-bg {
 	0% {
-		background: blue;
+		background: purple;
 	}
 	50% {
 		background: black;
 	}
 	100% {
-		background: blue;
+		background: purple;
 	}
 }
 .slide.idea-graphic-2.did-step-change-2 .tv-bg {

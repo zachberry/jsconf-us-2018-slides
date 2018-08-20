@@ -154,10 +154,18 @@ export default class SlideContent extends Component {
 					</g>
 				</svg>
 
-				<div className="circle circle-css pulse">CSS</div>
-				<div className="circle circle-three-js pulse">THREE.JS</div>
-				<div className="circle circle-canvas pulse">&lt;CANVAS&gt;</div>
-				<div className="circle circle-video pulse">&lt;VIDEO&gt;</div>
+				<div className="circle circle-css pulse">
+					<span>CSS</span>
+				</div>
+				<div className="circle circle-three-js pulse">
+					<span>THREE.JS</span>
+				</div>
+				<div className="circle circle-canvas pulse">
+					<span>&lt;CANVAS&gt;</span>
+				</div>
+				<div className="circle circle-video pulse">
+					<span>&lt;VIDEO&gt;</span>
+				</div>
 				<img className="tv pulse" src={tv} />
 				<div className="tv-bg" />
 				<img className="tri" src={tri} />

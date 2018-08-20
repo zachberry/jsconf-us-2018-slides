@@ -14,10 +14,6 @@ export default class SlideContent extends Component {
 		return 'demo'
 	}
 
-	static get features() {
-		return ['webcam']
-	}
-
 	render() {
 		if (!this.props.isCurrentSlide) return null
 
