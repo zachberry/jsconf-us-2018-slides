@@ -52,7 +52,7 @@ export default class SlideContent extends Component {
 								lang="html"
 								text={`<n1-1532902143698 />
 <n1-1532902441952 />
-<!-- God, forgive me for my sins -->`}
+<!-- And so on... -->`}
 							/>
 						</div>
 					</li>

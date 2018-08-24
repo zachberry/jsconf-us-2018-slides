@@ -8,7 +8,7 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return ['start', 'about', 'about-2', 'about-3']
+		return ['start', 'about', 'about-2']
 	}
 
 	reload() {
@@ -36,7 +36,6 @@ export default class SlideContent extends Component {
 							Changing behavior requires editing code, checking result, and repeat
 						</li>
 						<li className="step-2">Want a UI to tweak parameters live</li>
-						<li className="step-3">🤔</li>
 					</ul>
 				</div>
 			</Fragment>

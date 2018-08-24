@@ -8,7 +8,7 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return ['start', 'about', 'about-2', 'about-3', 'hrmm']
+		return ['start', 'about', 'about-2']
 	}
 
 	render() {
@@ -32,10 +32,8 @@ export default class SlideContent extends Component {
 						<li className="step-2">
 							I could totally make these with <code>&lt;canvas&gt;</code> or SVG!
 						</li>
-						<li className="step-3">🤔</li>
 					</ul>
 				</div>
-				<div className="hrmm">🤔</div>
 			</Fragment>
 		)
 	}

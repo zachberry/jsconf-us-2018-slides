@@ -2106,3 +2106,10 @@ a:visited {
 	top: 4em;
 	right: 2em;
 }
+
+iframe.vid-kid {
+	transform: scale(1.2);
+	transform-origin: top left;
+	width: 83.5vw !important;
+	height: 83.5vh !important;
+}

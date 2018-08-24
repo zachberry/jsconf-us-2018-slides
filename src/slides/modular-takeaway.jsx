@@ -8,17 +8,17 @@ export default class SlideContent extends Component {
 	}
 
 	static get steps() {
-		return ['start', 1, 2, 3]
+		return ['start', 1, 2]
 	}
 
 	render() {
 		return (
 			<Fragment>
 				<h1>
-					What the #%@* does this have to do with{' '}
+					How this relates to{' '}
 					<span className="js-box">
 						<span>JS</span>
-					</span>?
+					</span>...
 				</h1>
 				<ol>
 					<li className="step-1">
@@ -29,7 +29,6 @@ export default class SlideContent extends Component {
 						input and give output.
 					</li>
 				</ol>
-				<div className="step-3">🤔</div>
 			</Fragment>
 		)
 	}
